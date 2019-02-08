@@ -1,0 +1,102 @@
+@import '../../../theme/colors';
+
+.tooltip {
+  position: relative;
+}
+
+.tooltipTop {
+  bottom: 100%;
+  left: 50%;
+  padding-bottom: 9px;
+  transform: translateX(-50%);
+  width: max-content;
+  position: absolute;
+  z-index: 10;
+
+  &:hover {
+    display: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.tooltipBottom {
+  top: 100%;
+  left: 50%;
+  padding-top: 9px;
+  transform: translateX(-50%);
+  width: max-content;
+  position: absolute;
+  z-index: 10;
+
+  &:hover {
+    display: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.tooltipLeft {
+  top: 50%;
+  right: 100%;
+  padding-right: 9px;
+  transform: translateY(-50%);
+  width: max-content;
+  position: absolute;
+  z-index: 10;
+
+  &:hover {
+    display: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+}
+
+.tooltipRight {
+  top: 50%;
+  left: 100%;
+  padding-left: 9px;
+  transform: translateY(-50%);
+  width: max-content;
+  position: absolute;
+  z-index: 10;
+
+  &:hover {
+    display: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+}
+
+.tooltipMessage {
+  background: @color-light-grey;
+  border-radius: 4px;
+  font-weight: lighter;
+  color: @color-dark-grey;
+  font-size: 10pt;
+  padding: 0.75em;
+}
