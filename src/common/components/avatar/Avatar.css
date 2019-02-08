@@ -1,0 +1,11 @@
+.UserAvatar {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.UserAvatar--inner {
+    font-family: 'Avenir Next Regular';
+    font-size: 15px;
+    font-weight: 400;
+    color: #bac3cf;
+}

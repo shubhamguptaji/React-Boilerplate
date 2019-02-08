@@ -1,0 +1,44 @@
+@import '../../../theme/colors';
+
+.errorText {
+  font-family: 'Avenir Next Medium', Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: @color-dark;
+  padding-bottom: 10px;
+  font-weight: 600;
+}
+
+.errorText > a {
+  color: @color-blue;
+  cursor: pointer;
+}
+
+.errorText > a:hover {
+  text-decoration: underline;
+  color: @color-blue;
+}
+
+.closeButton {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  float: right;
+  color: @color-white;
+  background-color: @color-blue;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+  letter-spacing: 1.42;
+  font-family: 'Avenir Next Medium', Arial, Helvetica, sans-serif;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 85px;
+  height: 30px;
+}
+
+.closeButton:hover {
+  background-color: @color-blue-hover;
+}

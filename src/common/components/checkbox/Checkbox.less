@@ -1,0 +1,57 @@
+@import '../../../theme/colors';
+
+.checkboxButton {
+  padding: 10px 10px 10px 0;
+
+  // Styles which are passed to Semantic Checkbox Component
+  &:global(.ui.checkbox) {
+    & input:focus:checked ~ label:before,
+    & input:checked ~ label:before {
+      border-color: @color-grey;
+    }
+    & input:focus:checked ~ label:after,
+    & input:checked ~ label:after {
+      color: @color-blue;
+      font-size: 11px;
+      top: 1px;
+    }
+    & label:hover:before,
+    & input:checked ~ label:hover:before {
+      border-color: @color-blue-hover;
+    }
+  }
+
+  &.error {
+    &:global(.ui.checkbox) {
+      & label,
+      & label:before,
+      & label:hover:before,
+      & input:focus:checked ~ label:before,
+      & input:checked ~ label:before,
+      & input:checked ~ label:hover:before {
+        color: @color-red;
+        border-color: @color-red;
+      }
+    }
+  }
+
+  &.disabled {
+    &:global(.ui.checkbox) {
+      & label,
+      & label:before,
+      & label:hover:before,
+      & input:focus:checked ~ label:before,
+      & input:checked ~ label:before,
+      & input:checked ~ label:hover:before {
+        color: @color-blue-disabled;
+        border-color: @color-blue-disabled;
+      }
+      & input:focus:checked ~ label:after,
+      & input:checked ~ label:after {
+        color: @color-grey;
+        font-size: 11px;
+        top: 1px;
+      }
+    }
+  }
+}

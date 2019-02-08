@@ -1,0 +1,92 @@
+@import '../../../theme/colors';
+
+.primaryButton {
+  line-height: 30px;
+  letter-spacing: 1.5px;
+  font-family: 'Avenir Next Bold', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  font-stretch: expanded;
+  color: @color-white;
+  background-color: @color-blue;
+  padding: 0 20px;
+  border-radius: 2px;
+  cursor: pointer;
+  user-select: none;
+
+  &:not(.disabled):hover {
+    border-color: @color-blue-hover-button;
+    background-color: @color-blue-hover-button;
+  }
+
+  &:active {
+    border-color: @color-blue-pressed;
+    background-color: @color-blue-pressed;
+  }
+
+  &.disabled {
+    background-color: @color-blue-disabled;
+    opacity: 50;
+    border: 1px solid @color-blue-disabled;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.secondaryButton {
+  line-height: 28px;
+  letter-spacing: 1.5px;
+  font-family: 'Avenir Next Bold', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  font-stretch: expanded;
+  color: @color-blue;
+  border: 1px solid @color-blue;
+  border-radius: 2px;
+  padding: 0 20px;
+  cursor: pointer;
+  user-select: none;
+
+  &:not(.disabled):hover {
+    color: @color-white;
+    border-color: @color-blue-hover-button;
+    background-color: @color-blue-hover-button;
+  }
+
+  &:active {
+    color: @color-white;
+    border-color: @color-blue-pressed;
+    background-color: @color-blue-pressed;
+  }
+
+  &.disabled {
+    color: @color-blue-disabled;
+    border-color: @color-blue-disabled;
+    background-color: @color-white;
+
+    &:hover {
+      color: @color-blue-disabled;
+      border-color: @color-blue-disabled;
+      background-color: inherit;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.textButton {
+  display: inline;
+  text-align: right;
+  cursor: pointer;
+  color: @color-blue;
+  font-family: 'Avenir Next Bold', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  font-stretch: expanded;
+
+  &.disabled {
+    color: @color-grey;
+    cursor: default;
+  }
+}
