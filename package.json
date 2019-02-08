@@ -3,16 +3,23 @@
   "version": "0.0.1",
   "description": "Horizon Web UI",
   "main": "index.js",
-  "keywords": [
-    "Horizon",
-    "Controls"
-  ],
+  "keywords": ["Horizon", "Controls"],
   "author": "sgaikwad",
   "license": "ISC",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
-    "build": "./node_modules/.bin/webpack --mode production",
-    "create": "webpack"
+    "test": "jest src",
+    "test:ui": "jest --config=jest.config.js ui_tests --maxWorkers=1",
+    "test:local": "jest --config=jest.config.local.js ui_tests",
+    "test:watch": "npm test -- --watch",
+    "start": "webpack-dev-server --mode development",
+    "start:http": "cross-env ENV=test webpack-dev-server --mode development",
+    "start:proxy": "node proxy.js",
+    "prettier":
+      "prettier --config ./.prettierrc --ignorepath ./.prettierignore --write ./**/*.{js,json,css,less,md} ",
+    "flow": "flow",
+    "analyze": "source-map-explorer horizonweb/dist/main.*",
+    "lint": "eslint --fix ./",
+    "build": "gulp build"
   },
   "dependencies": {
     "consolidate": "^0.15.1",
