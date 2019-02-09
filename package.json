@@ -10,9 +10,10 @@
   "author": "sgaikwad",
   "license": "ISC",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
+    "start": "webpack-dev-server --mode development --open --hot | json-server --watch mock-api/db.json",
     "build": "./node_modules/.bin/webpack --mode production",
-    "create": "webpack"
+    "create": "webpack",
+    "flow": "flow"
   },
   "dependencies": {
     "consolidate": "^0.15.1",
@@ -53,13 +54,14 @@
     "dropzone": "^5.5.1",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
-    "eslint": "^5.7.0",
+    "eslint": "^5.13.0",
     "eslint-config-react-app": "^2.1.0",
     "eslint-loader": "^2.1.0",
+    "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-flowtype": "^2.50.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-react": "^7.12.4",
     "events": "^3.0.0",
     "file-extension": "^4.0.5",
     "file-loader": "^1.1.11",
@@ -67,6 +69,7 @@
     "fs": "0.0.1-security",
     "gulp": "^4.0.0",
     "history": "^4.7.2",
+    "html-webpack-plugin": "^3.2.0",
     "http-proxy": "1.17.0",
     "https": "1.0.0",
     "initials": "^3.0.0",
