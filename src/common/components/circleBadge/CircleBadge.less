@@ -1,0 +1,31 @@
+@import '../../../theme/colors';
+
+.circleBadge {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  font-size: 8pt;
+  background-color: @color-dark-grey;
+  border-radius: 12px;
+  color: @color-white;
+  height: 20px;
+  padding: 2px 3px 0 3px;
+  text-align: center;
+  min-width: 20px;
+  & .tooltip {
+    font-size: 9pt;
+    visibility: hidden;
+    width: 120px;
+    background-color: @color-light-grey;
+    color: @color-dark-grey;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px;
+    margin-top: 25px;
+    position: absolute;
+    z-index: 1;
+  }
+  &:hover .tooltip {
+    visibility: visible;
+  }
+}

@@ -1,0 +1,104 @@
+@import '../../../theme/colors';
+
+@border-color: @color-grey;
+@border-hover-color: @color-blue-hover;
+@border-error-color: @color-red;
+@border-disabled-color: @color-grey-aquahaze;
+
+@text-readonly-color: @color-aluminium;
+@text-disabled-color: @color-dark-grey;
+@placeholder-error-color: @border-error-color;
+@character-counter-color: @border-color;
+
+.textContainer {
+  position: relative;
+  display: flex;
+  border: 1px solid @border-color;
+  border-radius: 3px;
+  &:not(.error):not(.readonly):not(.disabled):hover,
+  &:not(.error):not(.readonly):not(.disabled).focus {
+    border: 1px solid @border-hover-color;
+  }
+  &.number {
+    text-align: right;
+  }
+  &.error {
+    border: 1px solid @border-error-color;
+  }
+  &.readonly {
+    border: 1px solid @color-blue-textarea;
+    color: @text-readonly-color;
+    background: @color-blue-textarea;
+  }
+  &.disabled {
+    color: @text-disabled-color;
+    border: 1px solid @border-disabled-color;
+  }
+}
+
+.text {
+  font-family: 'Avenir Next Medium', Arial, Helvetica, sans-serif;
+  background: @color-light-grey;
+  color: @color-grey-outer-space;
+  height: 35px;
+  width: 100%;
+  padding: 10px;
+  resize: none;
+  outline: none;
+  font-size: 14px;
+  caret-color: @color-light-blue;
+  border: none;
+  border-radius: inherit;
+  &::placeholder {
+    font-family: 'Avenir Next Medium', Arial, Helvetica, sans-serif;
+    color: @color-dark-grey;
+    font-size: 14px;
+    font-weight: 400;
+    .textContainer.readonly & {
+      color: @text-readonly-color;
+    }
+    .textContainer.disabled & {
+      color: @text-disabled-color;
+    }
+    .textContainer.error & {
+      color: @border-error-color;
+      font-size: inherit;
+      font-weight: 600;
+    }
+  }
+  &:focus {
+    &::placeholder {
+      color: transparent;
+    }
+  }
+  &[type='number'] {
+    text-align: right;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+  .textContainer.readonly & {
+    border: 1px solid @color-blue-textarea;
+    color: @text-readonly-color;
+    background: @color-blue-textarea;
+  }
+}
+
+.searchIcon {
+  width: 20px !important;
+  flex-shrink: 0;
+  margin-left: 10px;
+  align-self: center;
+  fill: @color-link-later !important;
+}
+
+.clearIcon {
+  width: 18px !important;
+  padding-top: 10px;
+  fill: @color-dark-grey !important;
+  &:hover {
+    fill: @color-link-later !important;
+  }
+}

@@ -1,0 +1,1314 @@
+{
+  "AllProductCategories": [
+    {
+      "success": true,
+      "response": [
+        {
+          "productCategoryTypeCode": "BRL01",
+          "productCategoryTypeDescr": "Loans",
+          "productCategoryCode": "BRL",
+          "productCategoryDescr": "Loans",
+          "isDefault": false
+        },
+        {
+          "productCategoryTypeCode": "FIN01",
+          "productCategoryTypeDescr": "Financings",
+          "productCategoryCode": "CP",
+          "productCategoryDescr": "ECM",
+          "isDefault": false
+        },
+        {
+          "productCategoryTypeCode": "FIN01",
+          "productCategoryTypeDescr": "Financings",
+          "productCategoryCode": "HY",
+          "productCategoryDescr": "HYCM",
+          "isDefault": false
+        },
+        {
+          "productCategoryTypeCode": "MGR01",
+          "productCategoryTypeDescr": "Mergers and Acquisitions",
+          "productCategoryCode": "ME",
+          "productCategoryDescr": "M&A",
+          "isDefault": false
+        },
+        {
+          "productCategoryTypeCode": "FIN01",
+          "productCategoryTypeDescr": "Financings",
+          "productCategoryCode": "MO",
+          "productCategoryDescr": "DCM",
+          "isDefault": false
+        },
+        {
+          "productCategoryTypeCode": "OTADV",
+          "productCategoryTypeDescr": "Other Advisory",
+          "productCategoryCode": "GA",
+          "productCategoryDescr": "Client General",
+          "isDefault": false
+        }
+      ],
+      "requestDateTime": "2018-12-14T12:39:30.0831497-05:00",
+      "timeTaken": 0,
+      "responseFrom": "host8e3469",
+      "requestUrl": "https://host/App/api/Project/AllProdCategories"
+    }
+  ],
+  "EmployeePicture": [
+    {
+      "success": true,
+      "response": "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",
+      "requestDateTime": "2018-12-14T09:20:05.5323816-05:00",
+      "timeTaken": 0,
+      "responseFrom": "DHK345679",
+      "requestUrl": "https://host/App/api/Employee/EmployeePicture/F278348"
+    }
+    ],
+  "Many": [
+    {
+      "success": true,
+      "response": [
+        {
+          "id": "1T0U",
+          "hccEmployeeId": "d312c588-c804-ea0b-b685-5789af1ee223",
+          "fullNameForSearch1": "jonathonkaufman",
+          "fullNameForSearch2": "kaufmanjonathon",
+          "firstName": "Jonathon",
+          "lastName": "Kaufman",
+          "mi": "R",
+          "titleRank": 60,
+          "title": "MDR",
+          "status": "A",
+          "spiderStatus": "A",
+          "departmentId": "0131",
+          "department": "Power & Renewables Americas",
+          "groupId": "UTILA",
+          "group": "Energy Power & Utilities - Americas",
+          "groupRegionId": "1",
+          "groupRegion": "Americas",
+          "upGroupId": "UTILA",
+          "upGroup": "Energy Power & Utilities - Americas",
+          "upGroupRegionId": "1",
+          "upGroupRegion": "Americas",
+          "ultGroupId": "PNR",
+          "ultGroupName": "Power & Renewables",
+          "ultGroupRegion": "Global",
+          "locOfficeId": "002",
+          "ftePtc": "100.00",
+          "lastHireDate": "7/28/2014 12:00:00 AM",
+          "officeCity": "NEW YORK",
+          "officeCountry": "USA",
+          "officeRegion": "AMERICAS",
+          "pid": "M057952",
+          "ntLogin": "jkaufma7",
+          "email": "jonathon.kaufman@credit-suisse.com",
+          "phone": "1 212 325 2963",
+          "isSpiderOnboarded": "Y",
+          "location": "NEW YORK,AMERICAS",
+          "orgUnit": "IBCM: Energy Power & Utilities - Americas(UTILA)",
+          "iscibd": true,
+          "entitlements": {
+            "empid": "1T0U",
+            "useR_LOGIN": "jkaufma7",
+            "useR_NAME": "Jonathon Kaufman",
+            "sitE_ID": "1",
+            "division": "1",
+            "divisioN_NAME": "CIBD",
+            "grouP_ID": "UTILA",
+            "grouP_NAME": "Energy Power & Utilities - Americas",
+            "caN_CREATE_EXPENCE_CODE": "N",
+            "iS_EXEC_ADMIN": "N",
+            "iS_STAFFING_OFFICER": "N",
+            "iS_PROJ_ADMIN": "N",
+            "iS_MNA_DEFENCE": "N",
+            "title": "MDR",
+            "iS_GROUP_HEAD": "Y",
+            "canseE_EXPENCEONLYBOX": "Y",
+            "iS_PROJ_SUPERUSER": "Y",
+            "iS_SUPER_RPT_HEAD": "Y",
+            "iS_DTR_ADMIN": "N",
+            "iS_OO": "N",
+            "newproJ_CONTACT": "Your project has been successfully saved and is pending approval.  Should you have any questions regarding the status of your project code, please contact your Financial Operating Officer.",
+            "mktsharE_VISIBLE": "Y",
+            "iS_ADMIN_DCM": "N",
+            "iS_CONFLICT_ADMIN": "N",
+            "iS_CONFLICT_NOREPORT": "N",
+            "iS_CONFLICT_READ": "N",
+            "iS_CLIENT_ADMIN": "N",
+            "iS_LOCN_GRP_HEAD": "N",
+            "globalgrouP_ID": "UTILA",
+            "globalgrouP_NAME": "Energy Power & Utilities - Americas",
+            "iS_TECH_OO": "N",
+            "iS_CDG_ADMIN": "N",
+            "iS_CDG_READONLY": "N",
+            "iS_CDG_RESTRICT": "N",
+            "iS_CDG_BY_PROD": "N",
+            "emP_DIVISION_NAME": "IBCM",
+            "iS_CAPITAL_IQ_USER": "N",
+            "iS_MATipAdmin": "N",
+            "iS_MATipUser": "N",
+            "iS_MADealsAdmin": "N",
+            "iS_MADealsUser": "N",
+            "canseE_ClientNavigator": "Y",
+            "iS_IBC_ADMIN": "N",
+            "iS_ExpAdmin": "N",
+            "iS_ExpUser": "Y",
+            "seE_ExpTab": "Y",
+            "exP_ADMIN_CODE": "XY46",
+            "iS_EXP_CODE_ADMIN": "N",
+            "iS_GLOBAL_ADMIN": "N",
+            "iS_CAMEL_ADMIN": "N",
+            "iS_LOANS_OPS": "N",
+            "iS_LOANS_PORTF_MGMNT": "N",
+            "iS_LOANS_PROD_CNTL": "N",
+            "iS_LOANS_MIS": "N",
+            "iS_ITSPENDADMIN": "N",
+            "caN_VIEW_HIER": "N",
+            "clientmapadm": "N",
+            "deptmapadm": "N",
+            "iS_NBFO_EXEC": "N",
+            "iS_IBWFeature": "N",
+            "iS_IBWReport": "N",
+            "iS_IBWProfAdmin": "N",
+            "syndLoans_ProdSpec": "N",
+            "iS_ADMINEXPPILOT": "Y",
+            "isUsageTrackAdmin": "N",
+            "isTeamLeader": "Y",
+            "iS_CAYMAN_APPROVER": "N",
+            "exposurE_EDITABLE": "N",
+            "eqoW_GRP": "N",
+            "ibD_USER": "N",
+            "iS_SEEBANKERRPT": "Y",
+            "iS_LOANS_CBG": "N",
+            "iS_PE_CFIG_USER": "N",
+            "iS_PFG_WEB_USR_ADMIN": "N",
+            "caN_VIEW_NA_REV": "N",
+            "iS_RAS_BANKER": "Y",
+            "iS_RAS_GROUP_HEAD": "Y",
+            "iS_SECURITY_USER": "N",
+            "iS_RAS_ADMIN": "N",
+            "emP_SUPERGRP_ID": "PNR",
+            "iS_EXEC_REP_ADMIN": "N",
+            "seE_EXP_PROD_RPT": "N",
+            "iS_LOANS_PRICER": "N",
+            "iS_READONLY": "N",
+            "iS_ER_CLIENT_HIERARCHY": "N",
+            "iS_PCDOCS_USER": "N",
+            "iS_LOSTMANDATE_USER": "N",
+            "iS_LOSTMANDATE_ADMIN": "N",
+            "iS_LOANS_GMAG": "N",
+            "iS_NBFO_REV_TRACK": "Y",
+            "iS_LOSTMANDATE_BANKER_TL": "Y",
+            "caN_SEE_ALL_ESTREV": "Y",
+            "caN_EDIT_ALL_ESTREV": "N",
+            "iS_MIPS_ADMIN": "N",
+            "iS_NBFO_ADMIN": "N",
+            "iS_SENIOR_MGR": "N",
+            "iS_PRD_CTRL": "N",
+            "caN_SEE_ALLPIPELINE_FLAGS": "Y",
+            "caN_SEE_PIPELINE_GRID": "Y",
+            "iS_MAIL_DST_ADMIN": "N",
+            "iS_LN_SL_LCD": "N",
+            "iS_LN_SL_LCD2": "N",
+            "iS_LN_SL_CL_GH": "N",
+            "iS_LN_SL_READ": "N",
+            "iS_LN_SL_PM": "N",
+            "iS_LN_SL_USER": "N",
+            "iS_GROUP_ACTIVITY_USER": "Y",
+            "iS_ROADSHOWUSER": "N",
+            "iS_ROADSHOWADMIN": "N",
+            "iS_BNKRECTADMIN": "N",
+            "iS_IGEN_MARKETER": "N",
+            "iS_NBFO_CAP_PRD": "N",
+            "iS_SHELFUSER": "N",
+            "iS_DEV_TRNG_USER": "N",
+            "iS_REGN_ADMIN": "N",
+            "iS_FIRMBUILD_SUPERUSER": "N",
+            "iS_MA_USER": "N",
+            "iS_ECM_PRODUCT_CONTROL_USER": "N",
+            "iS_GPMR_USER": "N",
+            "iS_NBFO_CM": "N",
+            "iS_COP_RPT_USER": "N",
+            "iS_COP_ADMIN": "N",
+            "iS_TIME_BY_PROD_USER": "Y",
+            "iS_STAFFING_ADMIN": "N",
+            "iS_MIPS_USER": "N",
+            "iS_TIME_BY_INDUSTRY_USER": "N",
+            "iS_IBD_DIVISION": "Y",
+            "iS_FAIRNESS_ADMIN": "N",
+            "iS_SENIOR_CALL": "N",
+            "iS_LOSTMANDATE_DRV_USER": "N",
+            "emP_REGION": "1",
+            "iS_CLNT_PERF_USER": "N",
+            "iS_RAS_REVIEWER": "N",
+            "iS_CIS_NAV_USER": "N",
+            "iS_LS_AccUser": "Y",
+            "iS_LS_AccAdmin": "N",
+            "iS_RN_USER": "N",
+            "iS_CDG_READONLY_BYPROD": "N",
+            "cmtAdmin": "N",
+            "cmtGrpHead": "N",
+            "iS_YEAR_END_PERF_ADMIN": "N",
+            "iS_PLbrStdyAdmn": "N",
+            "iS_CDG_DATA_ADMIN": "N",
+            "iS_ERN_DERIV_ADMN": "N",
+            "iS_BBL_DTSHT_REVR": "N",
+            "iS_BBL_DTSHT_BL_USR": "N",
+            "iS_RAS_SUPERADMIN": "N",
+            "iS_PE_SUPER_ADMIN": "N",
+            "iS_CBG_DOC_ADMIN": "N",
+            "iS_CALLREP_30DAY_EXCEP": "Y",
+            "iS_CBG_DOC_NAV": "N",
+            "iS_MIPS_SUPERADMIN": "N",
+            "usE_CALLREP_FAO_SKIN": "N",
+            "iS_IBDMgmCRStat": "N",
+            "iS_SPORT_USER": "N",
+            "iS_BRP_USER": "N",
+            "usE_CALLREP_IBD_SKIN": "N",
+            "iS_SECTORMAPADM": "N",
+            "emP_TITLE_RANK": "60",
+            "iS_ERC_ADMIN": "N",
+            "iS_PrdLbrStdyInd": "N",
+            "iS_PrdLbrStdyPrd": "N",
+            "iS_CLID_ADMIN": "N",
+            "iS_ERNIE_USER": "N",
+            "iS_ConflictReport": "N",
+            "iS_CONFLICT_SUPPORT": "N",
+            "iS_ExpRecActAdm": "N",
+            "iS_SEC_ADM_EDIT_DESC": "N",
+            "iS_CPR_ADMIN": "N",
+            "iS_CPR_SUPER_ADMIN": "N",
+            "iS_CS_AT_SA": "N",
+            "iS_ErnieMaint": "N",
+            "iS_REV_NAV_AMERICA": "N",
+            "iS_REV_NAV_PACIFIC": "N",
+            "iS_REV_NAV_EUROPE": "N",
+            "iS_REV_NAV_GLOBAL": "N",
+            "iS_REGION_LOCK_ADMIN": "N",
+            "iS_BPSREPORT": "N",
+            "iS_PRJNAVLITE_USER": "N",
+            "iS_PRDVIEW_ADMIN": "N",
+            "iS_PRDVIEW_READ": "N",
+            "iS_IFRS_AL_ADM": "N",
+            "iS_BNKR_SRVY_ADMIN": "N",
+            "iS_BNKR_SRVY_EMP": "N",
+            "iS_MROHC_ADMIN": "N",
+            "vieW_LINKED_PROJ": "N",
+            "iS_CID_USER": "N",
+            "removE_COP_LINK": "Y",
+            "removE_EMPDIVRPT_LINK": "Y",
+            "removE_FACEBOOK_LINK": "Y",
+            "removE_MYCOP_LINK": "Y",
+            "removE_COPADMIN_LINK": "Y",
+            "grouP_REGION": "1",
+            "iS_CBG_DSHBRD_USER": "N",
+            "iS_BRIDGE_FINANCE_USER": "N",
+            "iS_EST_BULK_PIPE_USER": "N",
+            "iS_LE_OVERRIDE_USER": "N"
+          },
+          "projectRoles": [
+            "00ZB",
+            "01NA",
+            "01R1",
+            "01S7",
+            "1T0U"
+          ],
+          "participantType": 0,
+          "reason": {},
+          "numberOfAliases": 0,
+          "shadowLastChangedDate": "0001-01-01T00:00:00",
+          "scripted": false,
+          "grantedOnDate": "0001-01-01T00:00:00",
+          "hasFullAccess": false,
+          "alwaysHasFullAccess": false,
+          "isNameListed": false,
+          "isMnA": false,
+          "flags": 0,
+          "isEmployee": true
+        }
+      ],
+      "requestDateTime": "2018-12-14T12:04:19.2418717-05:00",
+      "timeTaken": 0,
+      "responseFrom": "DHK345679",
+      "requestUrl": "https://host/App/api/user/Many"
+    }
+  ],
+  "Products": [
+    {
+      "success": true,
+      "response": [
+        {
+          "categoryID": "BRL",
+          "categoryName": "Bridge Loans",
+          "successFee": 0,
+          "fairnessFee": 0,
+          "otherFee": 0,
+          "name": "HY Bridge Loan",
+          "isDefault": false,
+          "id": "1951"
+        },
+        {
+          "categoryID": "BRL",
+          "categoryName": "Bridge Loans",
+          "successFee": 0,
+          "fairnessFee": 0,
+          "otherFee": 0,
+          "name": "IG Bridge Loan",
+          "isDefault": false,
+          "id": "1952"
+        },
+        {
+          "categoryID": "SF",
+          "categoryName": "Synd. Loans",
+          "successFee": 0,
+          "fairnessFee": 0,
+          "otherFee": 0,
+          "name": "General Corporate",
+          "isDefault": false,
+          "id": "1682"
+        },
+        {
+          "categoryID": "SF",
+          "categoryName": "Synd. Loans",
+          "successFee": 0,
+          "fairnessFee": 0,
+          "otherFee": 0,
+          "name": "LBO",
+          "isDefault": false,
+          "id": "1690"
+        },
+        {
+          "categoryID": "SF",
+          "categoryName": "Synd. Loans",
+          "successFee": 0,
+          "fairnessFee": 0,
+          "otherFee": 0,
+          "name": "Liquidity Backstop",
+          "isDefault": false,
+          "id": "1680"
+        }
+      ],
+      "requestDateTime": "2018-12-17T02:49:18.9744963-05:00",
+      "timeTaken": 0,
+      "responseFrom": "DHK345679",
+      "requestUrl": "https://host/App/api/Project/Products"
+    }
+  ],
+  "ProjectFields": [
+    {
+      "success": true,
+      "response": {
+        "projectDisplayRules": {
+          "skinId": 0,
+          "projectSkinFields": [
+            {
+              "fieldName": "clientName",
+              "defaultValue": "",
+              "fieldDataType": "string",
+              "isEditable": false,
+              "required": true,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "product",
+              "defaultValue": "",
+              "fieldDataType": "int",
+              "isEditable": true,
+              "required": true,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "projectName",
+              "defaultValue": "Asset Fin Advisory",
+              "fieldDataType": "string",
+              "isEditable": true,
+              "required": true,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "stage",
+              "defaultValue": "",
+              "fieldDataType": "string",
+              "isEditable": true,
+              "required": true,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "estimatedClosingDate",
+              "defaultValue": "",
+              "fieldDataType": "string",
+              "isEditable": true,
+              "required": false,
+              "canEdit": true,
+              "isViewable": true,
+              "isRequiredForExpenceProduct": false
+            },
+            {
+              "fieldName": "csRole",
+              "defaultValue": "",
+              "fieldDataType": "string",
+              "isEditable": true,
+              "required": true,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "probability",
+              "defaultValue": "",
+              "fieldDataType": "decimal",
+              "isEditable": false,
+              "required": true,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "teamMember",
+              "defaultValue": "",
+              "fieldDataType": "custom",
+              "isEditable": true,
+              "required": false,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "teamRoles",
+              "defaultValue": "",
+              "fieldDataType": "custom",
+              "isEditable": true,
+              "required": false,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "pipelineEstimates",
+              "defaultValue": "",
+              "fieldDataType": "custom",
+              "isEditable": false,
+              "required": false,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "projectSponsor",
+              "defaultValue": "",
+              "fieldDataType": "custom",
+              "isEditable": true,
+              "required": true,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "reportigCountry",
+              "defaultValue": "",
+              "fieldDataType": "custom",
+              "isEditable": false,
+              "required": true,
+              "canEdit": true,
+              "isViewable": false
+            },
+            {
+              "fieldName": "reportigSectors",
+              "defaultValue": "",
+              "fieldDataType": "custom",
+              "isEditable": false,
+              "required": true,
+              "canEdit": true,
+              "isViewable": false
+            },
+            {
+              "fieldName": "transactionDescription",
+              "defaultValue": "",
+              "fieldDataType": "string",
+              "isEditable": true,
+              "required": true,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "dealCurrency",
+              "defaultValue": "USD",
+              "fieldDataType": "string",
+              "isEditable": true,
+              "required": true,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "dealSizeBase",
+              "defaultValue": "0",
+              "fieldDataType": "decimal",
+              "isEditable": true,
+              "required": true,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "dealSizeUSD",
+              "defaultValue": "0",
+              "fieldDataType": "decimal",
+              "isEditable": true,
+              "required": true,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "expenseOnly",
+              "defaultValue": "",
+              "fieldDataType": "string",
+              "isEditable": true,
+              "required": false,
+              "canEdit": false,
+              "isViewable": false
+            },
+            {
+              "fieldName": "dealRegion",
+              "defaultValue": "3",
+              "fieldDataType": "string",
+              "isEditable": true,
+              "required": true,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "equityRegistrationStatus",
+              "defaultValue": "b",
+              "fieldDataType": "string",
+              "isEditable": true,
+              "required": false,
+              "canEdit": true,
+              "isViewable": true,
+              "isRequiredForExpenceProduct": false
+            },
+            {
+              "fieldName": "numberofShares",
+              "defaultValue": "0",
+              "fieldDataType": "int",
+              "isEditable": true,
+              "required": true,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "sharePrice",
+              "defaultValue": "0",
+              "fieldDataType": "decimal",
+              "isEditable": true,
+              "required": true,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "grossSpread",
+              "defaultValue": "0",
+              "fieldDataType": "decimal",
+              "isEditable": true,
+              "required": false,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "managementFees",
+              "defaultValue": "0",
+              "fieldDataType": "decimal",
+              "isEditable": true,
+              "required": false,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "underwritingFees",
+              "defaultValue": "0",
+              "fieldDataType": "decimal",
+              "isEditable": true,
+              "required": true,
+              "canEdit": true,
+              "isViewable": true
+            },
+            {
+              "fieldName": "primaryCountry",
+              "defaultValue": "",
+              "fieldDataType": "string",
+              "isEditable": true,
+              "required": true,
+              "canEdit": true,
+              "isViewable": true,
+              "isRequiredForExpenceProduct": false
+            },
+            {
+              "fieldName": "secondaryCountries",
+              "defaultValue": "",
+              "fieldDataType": "custom",
+              "isEditable": true,
+              "required": false,
+              "canEdit": true,
+              "isViewable": true,
+              "isRequiredForExpenceProduct": false
+            },
+            {
+              "fieldName": "legalEntity",
+              "defaultValue": "",
+              "fieldDataType": "string",
+              "isEditable": false,
+              "required": false,
+              "canEdit": true,
+              "isViewable": false,
+              "isRequiredForExpenceProduct": false
+            },
+            {
+              "fieldName": "projectkycstatus",
+              "defaultValue": "",
+              "fieldDataType": "string",
+              "isEditable": false,
+              "required": false,
+              "canEdit": true,
+              "isViewable": false,
+              "isRequiredForExpenceProduct": false
+            },
+            {
+              "fieldName": "projectkycstatuscomment",
+              "defaultValue": "",
+              "fieldDataType": "string",
+              "isEditable": false,
+              "required": false,
+              "canEdit": true,
+              "isViewable": false,
+              "isRequiredForExpenceProduct": false
+            },
+            {
+              "fieldName": "csbookingentity",
+              "defaultValue": "",
+              "fieldDataType": "string",
+              "isEditable": false,
+              "required": false,
+              "canEdit": true,
+              "isViewable": false,
+              "isRequiredForExpenceProduct": false
+            },
+            {
+              "fieldName": "entitykycstatus",
+              "defaultValue": "",
+              "fieldDataType": "string",
+              "isEditable": false,
+              "required": false,
+              "canEdit": true,
+              "isViewable": false,
+              "isRequiredForExpenceProduct": false
+            }
+          ],
+          "isrcgRole": false
+        },
+        "request": {
+          "empId": "CONLASTT",
+          "ntId": "F367704",
+          "objectId": "PROJECT_MAIN",
+          "clientId": "1882-1",
+          "productCayegoryId": "AB",
+          "productCode": 3890,
+          "operation": "create",
+          "entity": "project",
+          "csRole": "AdminAgent"
+        }
+      },
+      "requestDateTime": "2018-12-17T03:20:02.6656449-05:00",
+      "timeTaken": 0,
+      "responseFrom": "DHK345679",
+      "requestUrl": "https://host/App/api/Project/GetProjectFields"
+    }
+  ],
+  "ProjectReferences": [
+    {
+      "success": true,
+      "response": {
+        "stages": [
+          {
+            "id": "S",
+            "name": "Solicitation",
+            "projStatus": "A",
+            "rawStageCode": "S",
+            "rawStageDescription": "Solicitation"
+          },
+          {
+            "id": "X",
+            "name": "Mandate/Execution - 25%",
+            "projStatus": "A",
+            "rawStageCode": "M",
+            "rawStageDescription": "Mandate/Execution"
+          },
+          {
+            "id": "Y",
+            "name": "Mandate/Execution - 50%",
+            "projStatus": "A",
+            "rawStageCode": "M",
+            "rawStageDescription": "Mandate/Execution"
+          },
+          {
+            "id": "O",
+            "name": "Mandate/OnHold",
+            "projStatus": "A",
+            "rawStageCode": "O",
+            "rawStageDescription": "Mandate/OnHold"
+          },
+          {
+            "id": "C",
+            "name": "Completed",
+            "projStatus": "I",
+            "rawStageCode": "C",
+            "rawStageDescription": "Completed"
+          },
+          {
+            "id": "D",
+            "name": "Dead",
+            "projStatus": "I",
+            "rawStageCode": "D",
+            "rawStageDescription": "Dead"
+          }
+        ],
+        "reportingLocation": [
+          {
+            "id": "500",
+            "name": "Abu Dhabi",
+            "regionId": "3",
+            "regionName": "Europe"
+          },
+          {
+            "id": "501",
+            "name": "Afghanistan",
+            "regionId": "2",
+            "regionName": "Pacific"
+          },
+          {
+            "id": "502",
+            "name": "Ajman",
+            "regionId": "3",
+            "regionName": "Europe"
+          },
+          {
+            "id": "503",
+            "name": "Albania",
+            "regionId": "3",
+            "regionName": "Europe"
+          },
+          {
+            "id": "192",
+            "name": "Algeria",
+            "regionId": "3",
+            "regionName": "Europe"
+          }
+        ],
+        "reportingSectors": [
+          {
+            "id": "10",
+            "name": "Aerospace & Defense"
+          },
+          {
+            "id": "15",
+            "name": "Airlines"
+          },
+          {
+            "id": "441",
+            "name": "Asset Management"
+          },
+          {
+            "id": "5",
+            "name": "Automotive"
+          },
+          {
+            "id": "400",
+            "name": "Banks & Depository Institutions"
+          }
+        ],
+        "setInitialInfo": {
+          "industryId": "J14",
+          "clientRegion": "1",
+          "reportingLocation": "1",
+          "reportingSector": "300",
+          "relationship": "C",
+          "scale": "1",
+          "rate": "1",
+          "dealCurrency": "USD",
+          "proejctName": "Acquisition"
+        },
+        "defaultProjectTeam": [
+          {
+            "id": "1T0U",
+            "roleId": "PRJTTMLEAD",
+            "roleName": "Team Lead"
+          }
+        ],
+        "csfbRoles": [
+          {
+            "id": "AdminAgent",
+            "name": "Administrative agent"
+          },
+          {
+            "id": "Advisor",
+            "name": "Advisor"
+          },
+          {
+            "id": "Arranger",
+            "name": "Arranger"
+          },
+          {
+            "id": "Book Runner",
+            "name": "Book Runner"
+          },
+          {
+            "id": "Co-Advisor",
+            "name": "Co-Advisor"
+          }
+        ],
+        "dealRegions": [
+          {
+            "id": "8",
+            "name": "Africa"
+          },
+          {
+            "id": "1",
+            "name": "Americas"
+          },
+          {
+            "id": "7",
+            "name": "Australia/NZ"
+          },
+          {
+            "id": "E",
+            "name": "Eastern Europe"
+          },
+          {
+            "id": "3",
+            "name": "Europe"
+          }
+        ],
+        "revenueTypes": [
+          {
+            "id": "40",
+            "name": "Fee"
+          },
+          {
+            "id": "10",
+            "name": "Retainer"
+          },
+          {
+            "id": "100",
+            "name": "Announced Fee"
+          },
+          {
+            "id": "110",
+            "name": "Completed Fee"
+          },
+          {
+            "id": "30",
+            "name": "Success Fee"
+          }
+        ],
+        "dealCurrencies": [
+          {
+            "id": "AFA",
+            "name": "AFGHANISTAN AFGHANI (AFA)"
+          },
+          {
+            "id": "AFN",
+            "name": "AFGHANISTAN AFGHANI (AFN)"
+          },
+          {
+            "id": "ALL",
+            "name": "ALBANIA LEK (ALL)"
+          },
+          {
+            "id": "DZD",
+            "name": "ALGERIAN DINAR (DZD)"
+          },
+          {
+            "id": "ADP",
+            "name": "ANDORRAN PESETA (ADP)"
+          }
+        ],
+        "equityRegStatus": [
+          {
+            "id": "b",
+            "name": "Filed"
+          },
+          {
+            "id": "d",
+            "name": "Lost"
+          },
+          {
+            "id": "e",
+            "name": "Lost/Filed"
+          },
+          {
+            "id": "f",
+            "name": "Lost/Priced"
+          },
+          {
+            "id": "c",
+            "name": "Priced"
+          }
+        ],
+        "countries": [
+          {
+            "id": "500",
+            "name": "Abu Dhabi",
+            "regionId": "3",
+            "regionName": "Europe"
+          },
+          {
+            "id": "501",
+            "name": "Afghanistan",
+            "regionId": "2",
+            "regionName": "Pacific"
+          },
+          {
+            "id": "502",
+            "name": "Ajman",
+            "regionId": "3",
+            "regionName": "Europe"
+          },
+          {
+            "id": "503",
+            "name": "Albania",
+            "regionId": "3",
+            "regionName": "Europe"
+          },
+          {
+            "id": "192",
+            "name": "Algeria",
+            "regionId": "3",
+            "regionName": "Europe"
+          }
+        ],
+        "entityKYCStatusList": [
+          {
+            "id": "1",
+            "name": "Not Started"
+          },
+          {
+            "id": "2",
+            "name": "In Progress"
+          },
+          {
+            "id": "3",
+            "name": "On Hold"
+          },
+          {
+            "id": "4",
+            "name": "Complete"
+          }
+        ],
+        "projectClientIdKYCStatusList": [
+          {
+            "id": "1",
+            "name": "Not Started"
+          },
+          {
+            "id": "2",
+            "name": "In Progress"
+          },
+          {
+            "id": "3",
+            "name": "On Hold"
+          },
+          {
+            "id": "4",
+            "name": "Complete"
+          }
+        ],
+        "csBookingEntityList": [
+          {
+            "id": "161",
+            "name": "Credit Suisse International"
+          },
+          {
+            "id": "301",
+            "name": "Credit Suisse Securities (Europe) Limited"
+          },
+          {
+            "id": "001",
+            "name": "APAC Project"
+          },
+          {
+            "id": "B10",
+            "name": "Banco de Investimentos Credit Suisse (Brasil) S.A."
+          },
+          {
+            "id": "X06",
+            "name": "CS Cayman Branch"
+          }
+        ],
+        "mandatedDealsRegionFilterLookup": [
+          {
+            "key": "all",
+            "value": "All"
+          },
+          {
+            "key": "CLRAMERICAS",
+            "value": "Americas - Client Region",
+            "regionId": "1"
+          },
+          {
+            "key": "CLREMEA",
+            "value": "EMEA - Client Region",
+            "regionId": "3"
+          },
+          {
+            "key": "CLRAPAC",
+            "value": "APAC - Client Region",
+            "regionId": "2"
+          },
+          {
+            "key": "DLRAMERICAS",
+            "value": "Americas - Deal Region",
+            "regionId": "1"
+          }
+        ]
+      },
+      "requestDateTime": "2018-12-14T11:58:49.4927477-05:00",
+      "timeTaken": 0,
+      "responseFrom": "DHK345679",
+      "requestUrl": "https://host/App/api/Project/ProjectReferences?cid=S009"
+    }
+  ],
+  "Search": [
+    {
+      "success": true,
+      "response": {
+        "employees": [
+          {
+            "id": "CONC46E",
+            "fullNameForSearch1": "allenjames",
+            "fullNameForSearch2": "jamesallen",
+            "firstName": "Allen",
+            "lastName": "James",
+            "titleRank": 210,
+            "status": "A",
+            "spiderStatus": "N",
+            "departmentId": "0720",
+            "department": "Capital Projects AMRS",
+            "groupId": "NONIB",
+            "group": "Non IBCM  Dept - Americas",
+            "groupRegionId": "1",
+            "groupRegion": "Americas",
+            "upGroupId": "NONIB",
+            "upGroup": "Non IBCM  Dept - Americas",
+            "upGroupRegionId": "1",
+            "upGroupRegion": "Americas",
+            "ultGroupId": "NONIB",
+            "ultGroupName": "Non IBCM  Dept - Americas",
+            "ultGroupRegion": "Americas",
+            "locOfficeId": "0RD",
+            "ftePtc": "100.00",
+            "officeCity": "RALEIGH/RTP",
+            "officeCountry": "USA",
+            "officeRegion": "AMERICAS",
+            "ntLogin": "CONC46E_R",
+            "phone": "1 919",
+            "isSpiderOnboarded": "N",
+            "location": "RALEIGH/RTP,AMERICAS",
+            "orgUnit": "OTHER: Non IBCM  Dept - Americas(NONIB)",
+            "iscibd": false,
+            "projectRoles": [],
+            "participantType": 0,
+            "reason": {},
+            "numberOfAliases": 0,
+            "shadowLastChangedDate": "0001-01-01T00:00:00",
+            "scripted": false,
+            "grantedOnDate": "0001-01-01T00:00:00",
+            "hasFullAccess": false,
+            "alwaysHasFullAccess": false,
+            "isNameListed": false,
+            "isMnA": false,
+            "flags": 0,
+            "isEmployee": true
+          },
+          {
+            "id": "SAAI",
+            "hccEmployeeId": "1cf79a1a-ea69-11e6-9fbf-02000001432c",
+            "fullNameForSearch1": "jacobjames",
+            "fullNameForSearch2": "jamesjacob",
+            "firstName": "Jacob",
+            "lastName": "James",
+            "titleRank": 170,
+            "title": "AVP",
+            "status": "A",
+            "spiderStatus": "N",
+            "departmentId": "S0NSUK",
+            "department": "Product Control LDN",
+            "groupId": "d2acs",
+            "group": "[S0NSUK]Product Control LDN",
+            "upGroupId": "d2acs",
+            "upGroup": "[S0NSUK]Product Control LDN",
+            "ultGroupId": "d2acs",
+            "ultGroupName": "[S0NSUK]Product Control LDN",
+            "locOfficeId": "000",
+            "ftePtc": "100.00",
+            "lastHireDate": "12/1/2008 12:00:00 AM",
+            "officeCity": "LONDON",
+            "officeCountry": "United Kingdom",
+            "officeRegion": "EUROPE",
+            "pid": "M627178",
+            "ntLogin": "jjames10",
+            "email": "jacob.james@credit-suisse.com",
+            "phone": "44 20 7883 0838",
+            "isSpiderOnboarded": "N",
+            "location": "LONDON,EUROPE",
+            "orgUnit": ": [S0NSUK]Product Control LDN(d2acs)",
+            "iscibd": false,
+            "projectRoles": [],
+            "participantType": 0,
+            "reason": {},
+            "numberOfAliases": 0,
+            "shadowLastChangedDate": "0001-01-01T00:00:00",
+            "scripted": false,
+            "grantedOnDate": "0001-01-01T00:00:00",
+            "hasFullAccess": false,
+            "alwaysHasFullAccess": false,
+            "isNameListed": false,
+            "isMnA": false,
+            "flags": 0,
+            "isEmployee": true
+          },
+          {
+            "id": "479H",
+            "hccEmployeeId": "1a8c5ec7-0431-300a-681c-5789b847b8df",
+            "fullNameForSearch1": "james-asiagreen",
+            "fullNameForSearch2": "greenjames-asia",
+            "firstName": "James - Asia",
+            "lastName": "Green",
+            "mi": "M",
+            "titleRank": 60,
+            "title": "MDR",
+            "status": "A",
+            "spiderStatus": "N",
+            "departmentId": "CMGCH11",
+            "department": "Country Mgmt GC  HK",
+            "groupId": "d20qa",
+            "group": "[CMGCH11]Country Mgmt GC  HK",
+            "groupRegionId": "2",
+            "groupRegion": "Pacific",
+            "upGroupId": "d20qa",
+            "upGroup": "[CMGCH11]Country Mgmt GC  HK",
+            "upGroupRegionId": "2",
+            "upGroupRegion": "Pacific",
+            "ultGroupId": "d20qa",
+            "ultGroupName": "[CMGCH11]Country Mgmt GC  HK",
+            "ultGroupRegion": "Pacific",
+            "locOfficeId": "00U",
+            "ftePtc": "100.00",
+            "lastHireDate": "6/24/1996 12:00:00 AM",
+            "officeCity": "HONG KONG",
+            "officeCountry": "People's Republic of China",
+            "officeRegion": "PACIFIC",
+            "pid": "M150096",
+            "ntLogin": "jgreen1",
+            "email": "james.green@credit-suisse.com",
+            "phone": "852  2101 6617",
+            "isSpiderOnboarded": "N",
+            "location": "HONG KONG,PACIFIC",
+            "orgUnit": ": [CMGCH11]Country Mgmt GC  HK(d20qa)",
+            "iscibd": false,
+            "projectRoles": [],
+            "participantType": 0,
+            "reason": {},
+            "numberOfAliases": 0,
+            "shadowLastChangedDate": "0001-01-01T00:00:00",
+            "scripted": false,
+            "grantedOnDate": "0001-01-01T00:00:00",
+            "hasFullAccess": false,
+            "alwaysHasFullAccess": false,
+            "isNameListed": false,
+            "isMnA": false,
+            "flags": 0,
+            "isEmployee": true
+          },
+          {
+            "id": "2EOD",
+            "fullNameForSearch1": "james-complianceawalker",
+            "fullNameForSearch2": "walkerjames-compliancea",
+            "firstName": "James - Compliance A",
+            "lastName": "Walker",
+            "titleRank": 60,
+            "title": "MDR",
+            "status": "A",
+            "spiderStatus": "N",
+            "departmentId": "0NLA24",
+            "department": "CCRO-APAC-CT AUSTRALIA IB",
+            "groupId": "NONI2",
+            "group": "Non IBCM Dept  - Pacific",
+            "groupRegionId": "2",
+            "groupRegion": "Pacific",
+            "upGroupId": "NONI2",
+            "upGroup": "Non IBCM Dept  - Pacific",
+            "upGroupRegionId": "2",
+            "upGroupRegion": "Pacific",
+            "ultGroupId": "NONI2",
+            "ultGroupName": "Non IBCM Dept  - Pacific",
+            "ultGroupRegion": "Pacific",
+            "locOfficeId": "00S",
+            "ftePtc": "100.00",
+            "lastHireDate": "4/18/2017 12:00:00 AM",
+            "officeCity": "SYDNEY",
+            "officeCountry": "Australia",
+            "officeRegion": "PACIFIC",
+            "pid": "M261207",
+            "ntLogin": "jwalke29",
+            "email": "james.l.walker@credit-suisse.com",
+            "phone": "61 2 8205 4592",
+            "isSpiderOnboarded": "N",
+            "location": "SYDNEY,PACIFIC",
+            "orgUnit": "IBCM: Non IBCM Dept  - Pacific(NONI2)",
+            "iscibd": false,
+            "projectRoles": [],
+            "participantType": 0,
+            "reason": {},
+            "numberOfAliases": 0,
+            "shadowLastChangedDate": "0001-01-01T00:00:00",
+            "scripted": false,
+            "grantedOnDate": "0001-01-01T00:00:00",
+            "hasFullAccess": false,
+            "alwaysHasFullAccess": false,
+            "isNameListed": false,
+            "isMnA": false,
+            "flags": 0,
+            "isEmployee": true
+          }
+        ]
+      },
+      "request": "https://host/App/api/Search?q=James&ps=100&pc=1&c=EMP",
+      "requestDateTime": "2018-12-17T02:56:41.9668863-05:00",
+      "timeTaken": 159
+    }
+  ],
+  "TeamRole": [
+    {
+      "success": true,
+      "response": [
+        {
+          "roleId": "PRJTMSRBNK",
+          "roleName": "Senior Banker"
+        },
+        {
+          "roleId": "PRJTTMLEAD",
+          "roleName": "Team Lead"
+        },
+        {
+          "roleId": "PRJTTMMEMB",
+          "roleName": "Team Member"
+        },
+        {
+          "roleId": "PRJUKREG",
+          "roleName": "UK Regulatory"
+        },
+        {
+          "roleId": "PRJDESIGNAPE",
+          "roleName": "Designated Person"
+        }
+      ],
+      "requestDateTime": "2018-12-14T12:22:24.9984545-05:00",
+      "timeTaken": 0,
+      "responseFrom": "DHK345679",
+      "requestUrl": "https://host/App/api/Project/TeamRole?tmId=1T0U&cid=S009"
+    }
+  ]
+}

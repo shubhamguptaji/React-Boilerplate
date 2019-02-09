@@ -1,0 +1,67 @@
+@import '../../../theme/colors';
+
+.radioButton {
+  padding: 10px 10px 10px 0;
+
+  &.vertical {
+    display: block !important;
+    padding: 5px 10px 5px 0;
+  }
+
+  // Styles which are passed to Semantic Radio Component
+  &:global(.ui.radio.checkbox) {
+    & input:focus:checked ~ label:before,
+    & input:checked ~ label:before {
+      background-color: @color-blue;
+      border-color: @color-grey;
+    }
+    & input:focus:checked ~ label:after,
+    & input:checked ~ label:after {
+      background-color: @color-white;
+    }
+    & input:focus ~ label:before,
+    & label:hover:before {
+      border-color: @color-blue-hover;
+    }
+  }
+
+  &.error {
+    &:global(.ui.radio.checkbox) {
+      & label,
+      & label:before,
+      & label:hover:before,
+      & input:focus:checked ~ label:before,
+      & input:checked ~ label:before,
+      & input:checked ~ label:hover:before {
+        color: @color-red;
+        border-color: @color-red;
+      }
+    }
+  }
+
+  &.readonly,
+  &.disabled {
+    &:global(.ui.radio.checkbox) {
+      & label,
+      & label:before,
+      & label:hover:before,
+      & input:focus ~ label:before,
+      & input:focus:checked ~ label:before,
+      & input:checked ~ label:before,
+      & input:checked ~ label:hover:before {
+        color: @color-grey;
+        border-color: @color-grey;
+        cursor: default;
+      }
+      & input:focus:checked ~ label:before,
+      & input:checked ~ label:before {
+        background-color: @color-blue-disabled;
+        border-color: @color-grey;
+      }
+      & input:focus:checked ~ label:after,
+      & input:checked ~ label:after {
+        color: @color-blue-disabled;
+      }
+    }
+  }
+}

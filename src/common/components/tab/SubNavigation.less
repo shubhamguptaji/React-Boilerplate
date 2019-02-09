@@ -1,0 +1,54 @@
+@import '../../../theme/colors';
+
+ol {
+  padding: 0;
+}
+
+.tabList {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid @divider-grey;
+  border-top: 1px solid @divider-grey;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tabItem {
+  font-family: 'Avenir Next Medium', Arial, Helvetica, sans-serif;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 30px;
+  padding: 12px 0 14px 0;
+  color: @color-dark-grey;
+}
+
+.tabItem > a:not(.subNavigationActive) {
+  color: @color-dark-grey;
+}
+
+.tabItem > a:hover {
+  color: @color-blue;
+}
+
+.subNavigationActive {
+  color: @color-grey-outer-space;
+  border-bottom: 2px solid @color-light-blue;
+  padding: 10px 0 11px 0;
+}
+
+.subNavigationActive > a {
+  color: @color-grey-outer-space;
+}
+
+.tabContent {
+  position: relative;
+  display: flex;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+}
