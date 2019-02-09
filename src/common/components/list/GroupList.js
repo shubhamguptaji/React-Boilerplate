@@ -8,7 +8,7 @@ import { List } from '../index';
 import * as misc from '../../utils/misc';
 import style from './GroupList.less';
 
-const GroupList = (props) => {
+const GroupList = props => {
   const items = props.items;
   const groupOrderSelector = props.groupOrderSelector;
   const groupDisplaySelector = props.groupDisplaySelector;
@@ -32,7 +32,7 @@ const GroupList = (props) => {
       groupOrderSelector,
       groupDisplaySelector
     );
-    return map(grouped, (group) => {
+    return map(grouped, group => {
       return (
         <GroupItem
           key={group.key}
@@ -61,16 +61,16 @@ function GroupItem(props) {
     isFunction(props.headerTemplateSelector) &&
     props.headerTemplateSelector(group.value)
       ? isFunction(props.headerTemplate)
-      ? props.headerTemplate
-      : EmptyHeaderTemplate
+        ? props.headerTemplate
+        : EmptyHeaderTemplate
       : EmptyHeaderTemplate;
 
   const FooterTemplate =
     isFunction(props.footerTemplateSelector) &&
     props.footerTemplateSelector(group.value)
       ? isFunction(props.footerTemplate)
-      ? props.footerTemplate
-      : EmptyFooterTemplate
+        ? props.footerTemplate
+        : EmptyFooterTemplate
       : EmptyFooterTemplate;
 
   const items = orderInGroupSelector

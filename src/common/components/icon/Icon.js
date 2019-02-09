@@ -18,14 +18,14 @@ export default class Icon extends React.Component {
     if (this.props.path) {
       return (
         <svg
-          tabIndex='0'
+          tabIndex="0"
           className={classes}
           viewBox={this.props.viewBox}
-          xmlns='http://www.w3.org/2000/svg'
+          xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink={'preserve'}
-          preserveAspectRatio='xMinYMin'
-          x='0px'
-          y='0px'
+          preserveAspectRatio="xMinYMin"
+          x="0px"
+          y="0px"
         >
           <path d={this.props.path} />
         </svg>
@@ -33,7 +33,7 @@ export default class Icon extends React.Component {
     }
 
     return (
-      <div tabIndex='0' className={classes}>
+      <div tabIndex="0" className={classes}>
         {this.props.children}
       </div>
     );

@@ -1,4 +1,3 @@
-
 export { default as StatusBar } from './statusBar/StatusBar';
 export { default as DetailsField } from './detailsField/DetailsField';
 export { default as List } from './list/List';

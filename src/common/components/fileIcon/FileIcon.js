@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import fileExtension from 'file-extension';
 
-const importAll = (r) => {
+const importAll = r => {
   const images = {};
   r.keys().map((item, index) => {
     return (images[item.replace('./', '')] = r(item));
@@ -13,7 +13,7 @@ const fileExtensionImages = importAll(
   require.context('../../../assets/img/fileIcons', false, /\.(png|jpe?g|svg)$/)
 );
 
-export const getFileExtensionKey = (filename) => {
+export const getFileExtensionKey = filename => {
   const extension = fileExtension(filename);
   switch (extension.toUpperCase()) {
     case 'PNG':
@@ -42,7 +42,7 @@ export const getFileExtensionKey = (filename) => {
   }
 };
 
-const getFileImage = (filename) => {
+const getFileImage = filename => {
   const key = getFileExtensionKey(filename);
   return fileExtensionImages[key];
 };

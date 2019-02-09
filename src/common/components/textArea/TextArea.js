@@ -19,7 +19,7 @@ class TextArea extends React.Component {
   }
 
   calcCharRemaining = ({ target: { value } }) => {
-    this.setState((prevState) => {
+    this.setState(prevState => {
       return Object.assign({}, prevState, {
         charRemaining: this.props.maxLength - value.length
       });
@@ -41,7 +41,7 @@ class TextArea extends React.Component {
   };
 
   toggleTextAreaFocus = () => {
-    this.setState((prevState) => {
+    this.setState(prevState => {
       return Object.assign({}, prevState, {
         isFocus: !prevState.isFocus
       });
@@ -77,14 +77,14 @@ class TextArea extends React.Component {
           onChange={this.onTextAreaChange}
         />
         {this.props.maxLength &&
-        !this.props.readonly && (
-          <div
-            className={this.styles.charCounter}
-            style={{ visibility: this.state.isFocus ? 'visible' : 'hidden' }}
-          >
-            {this.state.charRemaining} characters remaining
-          </div>
-        )}
+          !this.props.readonly && (
+            <div
+              className={this.styles.charCounter}
+              style={{ visibility: this.state.isFocus ? 'visible' : 'hidden' }}
+            >
+              {this.state.charRemaining} characters remaining
+            </div>
+          )}
       </div>
     );
   }

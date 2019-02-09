@@ -24,7 +24,7 @@ export default class ClientLegalEntityField extends React.Component {
     });
   };
 
-  saveValue = (value) => {
+  saveValue = value => {
     this.props.onChange(value);
   };
 
@@ -34,7 +34,7 @@ export default class ClientLegalEntityField extends React.Component {
     const row = [
       {
         content: (
-          <TextBlock className={styles.title} textTrimming='None'>
+          <TextBlock className={styles.title} textTrimming="None">
             {title}
           </TextBlock>
         ),
@@ -69,7 +69,7 @@ export default class ClientLegalEntityField extends React.Component {
               />
             </Button>
             {isOptional && (
-              <TextBlock className={styles.optional} textTrimming='None'>
+              <TextBlock className={styles.optional} textTrimming="None">
                 optional
               </TextBlock>
             )}

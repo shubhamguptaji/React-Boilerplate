@@ -20,7 +20,7 @@ export default function SearchField(props) {
   const items = [
     {
       content: (
-        <TextBlock className={styles.title} textTrimming='None'>
+        <TextBlock className={styles.title} textTrimming="None">
           {title}
         </TextBlock>
       ),
@@ -45,7 +45,7 @@ export default function SearchField(props) {
       content: (
         <div>
           {isOptional && (
-            <TextBlock className={styles.optional} textTrimming='None'>
+            <TextBlock className={styles.optional} textTrimming="None">
               optional
             </TextBlock>
           )}

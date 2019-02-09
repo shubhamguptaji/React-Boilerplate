@@ -19,7 +19,7 @@ export default function DropdownField(props) {
   const items = [
     {
       content: (
-        <TextBlock className={styles.title} textTrimming='None'>
+        <TextBlock className={styles.title} textTrimming="None">
           {title}
         </TextBlock>
       ),
@@ -44,7 +44,7 @@ export default function DropdownField(props) {
       content: (
         <div>
           {isOptional && (
-            <TextBlock className={styles.optional} textTrimming='None'>
+            <TextBlock className={styles.optional} textTrimming="None">
               optional
             </TextBlock>
           )}

@@ -11,7 +11,7 @@ import { isSubmitKey } from '../../utils/keyboardUtils';
 const cx = classNames.bind(Styles);
 
 export default class IconButton extends React.Component {
-  onClick = (e) => {
+  onClick = e => {
     if (this.props.enabled) this.props.onClick(e);
   };
 

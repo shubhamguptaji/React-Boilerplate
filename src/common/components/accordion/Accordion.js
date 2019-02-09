@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 const className = cx({
   searchinfodrop: true
 });
-const chevronClass = (isOpen) => {
+const chevronClass = isOpen => {
   const chevClass = !isOpen
     ? styles.searchinfodropCaretDown
     : styles.searchinfodropCaretUp;
@@ -20,7 +20,7 @@ const headButton = cx({
 });
 
 class Accordion extends Component {
-  handleClick = (e) => {
+  handleClick = e => {
     const { open } = this.state;
     const content = e.currentTarget.nextElementSibling;
     if (!isEmpty(content)) {

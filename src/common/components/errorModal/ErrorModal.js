@@ -58,7 +58,7 @@ function createMail(email, subject, body) {
   return result;
 }
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   hideError() {
     return dispatch(hideError());
   }

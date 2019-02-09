@@ -20,7 +20,7 @@ export default function DateField(props) {
   const items = [
     {
       content: (
-        <TextBlock className={styles.title} textTrimming='None'>
+        <TextBlock className={styles.title} textTrimming="None">
           {title}
         </TextBlock>
       ),
@@ -30,7 +30,7 @@ export default function DateField(props) {
       content: (
         <div className={styles.input}>
           <DatePicker
-            displayFormat='DD MMM YYYY'
+            displayFormat="DD MMM YYYY"
             {...props}
             name={id}
             time={false}
@@ -47,7 +47,7 @@ export default function DateField(props) {
       content: (
         <div>
           {isOptional && (
-            <TextBlock className={styles.optional} textTrimming='None'>
+            <TextBlock className={styles.optional} textTrimming="None">
               optional
             </TextBlock>
           )}

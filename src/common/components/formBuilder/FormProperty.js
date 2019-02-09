@@ -65,7 +65,7 @@ class FormProperty extends React.Component {
     return isBoolean(result)
       ? result
       : isArray(result)
-        ? map(result, (value) => !value)
+        ? map(result, value => !value)
         : !result;
   }
 
@@ -121,14 +121,14 @@ class FormProperty extends React.Component {
     });
   };
 
-  onChangeHandler = (value) => {
+  onChangeHandler = value => {
     this.props.onChange(this.props.id, value);
   };
 
   invalidateState = () => {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       this.setState(
-        (prevState) => {
+        prevState => {
           if (this.hasUnchanged(prevState)) {
             return undefined;
           }
@@ -147,7 +147,7 @@ class FormProperty extends React.Component {
   };
 
   setValueByDependencies = () => {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       const dependsValue = performPredicateAndBindContext.bind(this)(
         this.props.dependsValue
       );
@@ -157,7 +157,7 @@ class FormProperty extends React.Component {
     });
   };
 
-  hasUnchanged = (prevState) => {
+  hasUnchanged = prevState => {
     return (
       prevState.isOptional === this.isOptional &&
       prevState.isVisible === this.isVisible &&
@@ -171,11 +171,11 @@ class FormProperty extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevState.isValid !== this.state.isValid) {
       isFunction(this.props.onValidChange) &&
-      this.props.onValidChange(
-        this.props.id,
-        this.props.sectionId,
-        this.errorMessage
-      );
+        this.props.onValidChange(
+          this.props.id,
+          this.props.sectionId,
+          this.errorMessage
+        );
     }
   }
 

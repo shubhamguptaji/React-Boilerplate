@@ -38,7 +38,7 @@ export default class Modal extends React.Component {
       <div className={Style.modal}>
         <div
           className={this.containerStyles}
-          tabIndex='-1'
+          tabIndex="-1"
           ref={constants.modalContainer}
         >
           <div className={Style.modalContainerHeader}>

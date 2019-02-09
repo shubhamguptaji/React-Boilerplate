@@ -53,7 +53,7 @@ function getContent(dataType) {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   closeSideBar() {
     return dispatch(closeSideBar());
   }

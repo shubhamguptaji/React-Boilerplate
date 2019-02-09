@@ -22,7 +22,7 @@ export default class ArrayDropdownField extends React.Component {
   }
 
   riseOnValueChanged() {
-    this.props.onChange(this.state.data.filter((value) => !isNull(value)));
+    this.props.onChange(this.state.data.filter(value => !isNull(value)));
   }
 
   get count() {
@@ -41,7 +41,7 @@ export default class ArrayDropdownField extends React.Component {
 
   onSelectedChanged = (index, entity) => {
     this.setState(
-      (prev) => {
+      prev => {
         const cloneData = cloneDeep(prev.data);
         cloneData[index] = entity;
         return { data: cloneData, dataChanged: true };
@@ -52,7 +52,7 @@ export default class ArrayDropdownField extends React.Component {
 
   addAnotherEntity = () => {
     this.setState(
-      (prev) => {
+      prev => {
         const cloneData = cloneDeep(prev.data);
         cloneData.push(null);
         return { data: cloneData, dataChanged: false };
@@ -63,7 +63,7 @@ export default class ArrayDropdownField extends React.Component {
 
   removeEntity = (index, entity) => {
     this.setState(
-      (prev) => {
+      prev => {
         if (this.count === 1 && entity == null) return undefined;
 
         const cloneData = cloneDeep(prev.data);
@@ -127,7 +127,7 @@ function LastRow(props) {
       content: (
         <div className={styles.input}>
           <Button
-            type='text'
+            type="text"
             enabled={canAddAnotherEntity}
             onClick={addAnotherEntity}
           >
@@ -165,7 +165,7 @@ function FieldRow(props) {
   const items = [
     {
       content: !index && (
-        <TextBlock className={styles.title} textTrimming='None'>
+        <TextBlock className={styles.title} textTrimming="None">
           {title}
         </TextBlock>
       ),
@@ -182,7 +182,7 @@ function FieldRow(props) {
             readOnly={isReadOnly}
             error={!isValid}
             excludeOptions={excludeValues}
-            onChange={(x) => onChange(index, x)}
+            onChange={x => onChange(index, x)}
           />
         </div>
       ),
@@ -199,7 +199,7 @@ function FieldRow(props) {
             />
           )}
           {isOptional && (
-            <TextBlock className={styles.optional} textTrimming='None'>
+            <TextBlock className={styles.optional} textTrimming="None">
               optional
             </TextBlock>
           )}

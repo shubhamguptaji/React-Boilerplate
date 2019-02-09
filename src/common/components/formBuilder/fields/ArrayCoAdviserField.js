@@ -28,9 +28,9 @@ export default class ArrayCoAdviserField extends React.Component {
       activeFields:
         isArray(props.value) && !isEmpty(props.value)
           ? map(
-          props.value,
-          (value) => (this.isListValue(value.name) ? 'list' : 'lookup')
-          )
+              props.value,
+              value => (this.isListValue(value.name) ? 'list' : 'lookup')
+            )
           : []
     };
   }
@@ -41,7 +41,7 @@ export default class ArrayCoAdviserField extends React.Component {
 
   get canAddAnotherEntity() {
     return this.state.data.every(
-      (value) =>
+      value =>
         isObject(value) &&
         !isEmpty(value.domicile) &&
         (!isEmpty(value.list) || !isEmpty(value.lookup))
@@ -59,7 +59,7 @@ export default class ArrayCoAdviserField extends React.Component {
   }
 
   prepareCoAdviserValues(coAdvisers) {
-    return map(coAdvisers, (coAdviser) => {
+    return map(coAdvisers, coAdviser => {
       const inSource = this.isListValue(coAdviser.name);
       return {
         list: inSource ? coAdviser.name : null,
@@ -82,7 +82,7 @@ export default class ArrayCoAdviserField extends React.Component {
 
   onSelectedChanged = (index, entity, type) => {
     this.setState(
-      (prevState) => {
+      prevState => {
         const cloneData = prevState.data.slice();
         const cloneActiveFields = prevState.activeFields.slice();
 
@@ -106,7 +106,7 @@ export default class ArrayCoAdviserField extends React.Component {
 
   addAnotherEntity = () => {
     this.setState(
-      (prevState) => {
+      prevState => {
         const cloneData = prevState.data.slice();
         cloneData.push({});
 
@@ -121,7 +121,7 @@ export default class ArrayCoAdviserField extends React.Component {
 
   removeEntity = (index, entity) => {
     this.setState(
-      (prevState) => {
+      prevState => {
         if (this.count === 1 && entity === {}) return undefined;
 
         const cloneData = prevState.data.slice();
@@ -210,7 +210,7 @@ function LastRow(props) {
       content: (
         <div className={styles.input}>
           <Button
-            type='text'
+            type="text"
             enabled={canAddAnotherEntity}
             onClick={addAnotherEntity}
           >
@@ -249,7 +249,7 @@ function NameRow(props) {
   const items = [
     {
       content: (
-        <TextBlock className={styles.title} textTrimming='None'>
+        <TextBlock className={styles.title} textTrimming="None">
           {title.name}
         </TextBlock>
       ),
@@ -282,7 +282,7 @@ function NameRow(props) {
             />
           )}
           {isOptional && (
-            <TextBlock className={styles.optional} textTrimming='None'>
+            <TextBlock className={styles.optional} textTrimming="None">
               optional
             </TextBlock>
           )}
@@ -319,7 +319,7 @@ function DomicileRow(props) {
   const items = [
     {
       content: !index && (
-        <TextBlock className={styles.title} textTrimming='None'>
+        <TextBlock className={styles.title} textTrimming="None">
           {title.domicile}
         </TextBlock>
       ),
@@ -339,7 +339,7 @@ function DomicileRow(props) {
             disabled={!isEnabled}
             readOnly={isReadOnly}
             error={!isValid}
-            onChange={(x) => onChange(index, x, 'domicile')}
+            onChange={x => onChange(index, x, 'domicile')}
           />
         </div>
       ),

@@ -35,7 +35,7 @@ export default class ArrayClientLegalEntityClassificationField extends React.Com
     const prevUc = state.uc;
     const le = map(
       props.formData.signorAndInvolvedEntityDetails.clientLegalEntity,
-      (value) => {
+      value => {
         return value.list ? value.list : value.lookup;
       }
     );
@@ -86,7 +86,7 @@ function LabelRow(props) {
   const items = [
     {
       content: (
-        <TextBlock className={styles.expandedTitle} textTrimming='None'>
+        <TextBlock className={styles.expandedTitle} textTrimming="None">
           {props.title}
         </TextBlock>
       ),
@@ -108,7 +108,7 @@ function FieldRow(props) {
   const items = [
     {
       content: (
-        <TextBlock className={styles.title} textTrimming='None'>
+        <TextBlock className={styles.title} textTrimming="None">
           {value && !!value.name ? value.name : ''}
         </TextBlock>
       ),

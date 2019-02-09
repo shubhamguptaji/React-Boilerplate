@@ -1,0 +1,19 @@
+<assembly xmlns=""
+    xmlns:xsi=""
+    xsi:schemaLocation="">
+  <id>appserver</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>/lib</outputDirectory>
+      <includes>
+        <include>application:logging</include>
+        <include>application:core</include>
+        <include>application:utils</include>
+        <include>application:appserver</include>
+      </includes>
+    </dependencySet>
+  </dependencySets>
+</assembly>

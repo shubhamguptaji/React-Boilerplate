@@ -23,7 +23,7 @@ class NavItem extends Component {
             }
             content={content}
             basic
-            position='right center'
+            position="right center"
             inverted
           />
         </NavLink>

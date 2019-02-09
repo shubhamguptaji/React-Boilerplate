@@ -31,13 +31,13 @@ export default class ClientLegalEntity extends React.Component {
     return null;
   }
 
-  saveListValue = (listValue) => {
+  saveListValue = listValue => {
     this.setState({ listValue }, () => {
       this.props.onChange(this.state.listValue, 'list');
     });
   };
 
-  saveLookupValue = (lookupValue) => {
+  saveLookupValue = lookupValue => {
     this.setState({ lookupValue }, () => {
       this.props.onChange(this.state.lookupValue, 'lookup');
     });
@@ -115,5 +115,3 @@ ClientLegalEntity.defaultProps = {
   isValid: true,
   onChange: () => {}
 };
-
-

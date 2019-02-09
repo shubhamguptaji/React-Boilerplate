@@ -45,7 +45,7 @@ export default class WrappingGrid extends React.Component {
   calcItemDivMinWidth(array) {
     let width = 0;
 
-    array.forEach((item) => {
+    array.forEach(item => {
       width += item.minWidth || item.width;
     });
     return width + 10;

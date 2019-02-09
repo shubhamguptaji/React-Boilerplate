@@ -15,7 +15,7 @@ export default class RadioGroup extends React.Component {
     };
   }
 
-  onSelected = (value) => {
+  onSelected = value => {
     this.setState({ value });
     this.props.onChange(value);
   };
@@ -24,27 +24,27 @@ export default class RadioGroup extends React.Component {
     return (
       <React.Fragment>
         {this.props.source &&
-        this.props.source.map((option) => {
-          const optionLabel =
-            option.label !== undefined && option.label !== null
-              ? option.label
-              : option;
-          const optionValue =
-            option.value !== undefined && option.value !== null
-              ? option.value
-              : option;
+          this.props.source.map(option => {
+            const optionLabel =
+              option.label !== undefined && option.label !== null
+                ? option.label
+                : option;
+            const optionValue =
+              option.value !== undefined && option.value !== null
+                ? option.value
+                : option;
 
-          return (
-            <Radio
-              {...this.props}
-              key={optionValue}
-              label={optionLabel}
-              value={optionValue}
-              checked={isEqual(optionValue, this.state.value)}
-              onChange={this.onSelected}
-            />
-          );
-        })}
+            return (
+              <Radio
+                {...this.props}
+                key={optionValue}
+                label={optionLabel}
+                value={optionValue}
+                checked={isEqual(optionValue, this.state.value)}
+                onChange={this.onSelected}
+              />
+            );
+          })}
       </React.Fragment>
     );
   }

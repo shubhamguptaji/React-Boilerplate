@@ -19,7 +19,7 @@ export default class CoAdviser extends React.Component {
     };
   }
 
-  saveListValue = (listValue) => {
+  saveListValue = listValue => {
     const isValue = !isEmpty(listValue);
 
     this.setState(
@@ -35,7 +35,7 @@ export default class CoAdviser extends React.Component {
     );
   };
 
-  saveLookupValue = (lookupValue) => {
+  saveLookupValue = lookupValue => {
     const isValue = !isEmpty(lookupValue);
 
     this.setState(

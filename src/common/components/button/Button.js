@@ -10,7 +10,7 @@ import { isSubmitKey } from '../../utils/keyboardUtils';
 const cx = classNames.bind(Styles);
 
 export default class Button extends React.Component {
-  onClick = (e) => {
+  onClick = e => {
     if (this.props.enabled) this.props.onClick(e);
   };
 
@@ -28,7 +28,7 @@ export default class Button extends React.Component {
   primaryButton = () => {
     return (
       <div
-        tabIndex='0'
+        tabIndex="0"
         onClick={this.onClick}
         onKeyUp={({ keyCode }) =>
           isSubmitKey(keyCode) ? this.onClick() : null
@@ -45,7 +45,7 @@ export default class Button extends React.Component {
   secondaryButton = () => {
     return (
       <div
-        tabIndex='0'
+        tabIndex="0"
         onClick={this.onClick}
         onKeyUp={({ keyCode }) =>
           isSubmitKey(keyCode) ? this.onClick() : null
@@ -62,7 +62,7 @@ export default class Button extends React.Component {
   textButton = () => {
     return (
       <div
-        tabIndex='0'
+        tabIndex="0"
         onClick={this.onClick}
         onKeyUp={({ keyCode }) =>
           isSubmitKey(keyCode) ? this.onClick() : null

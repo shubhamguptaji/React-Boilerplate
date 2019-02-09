@@ -59,13 +59,13 @@ class TabPanel extends Component {
     }
   }
 
-  onClickTabItem = (tab) => {
+  onClickTabItem = tab => {
     this.setState({ currentTabIndex: tab.index });
     this.raiseTabChanged(tab);
     this.logUsageEvent(tab.tag);
   };
 
-  logUsageEvent = (tag) => {
+  logUsageEvent = tag => {
     if (tag) {
       switch (tag) {
         case constants.searchTabs.projects:
@@ -104,9 +104,9 @@ class TabPanel extends Component {
     const currentTabIndex = this.state.currentTabIndex;
     const olClassName = this.props.olClassName;
     return (
-      <div className='tabs'>
+      <div className="tabs">
         <ol className={olClassName}>
-          {children.map((child) => {
+          {children.map(child => {
             const { label, tabClass, tag, id } = child.props;
             tabIndex++;
             return (
@@ -123,7 +123,7 @@ class TabPanel extends Component {
             );
           })}
         </ol>
-        <div className='tab-content'>
+        <div className="tab-content">
           {currentTabIndex >= 0 && children[currentTabIndex].props.children}
         </div>
       </div>

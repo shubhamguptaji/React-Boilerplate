@@ -25,6 +25,6 @@ export default class Avatar extends Component {
       src = '';
     }
 
-    return <UserAvatar name={name} src={src} size='40' color='#E9EDF2' />;
+    return <UserAvatar name={name} src={src} size="40" color="#E9EDF2" />;
   }
 }

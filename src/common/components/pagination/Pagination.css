@@ -1,108 +1,108 @@
 .pagination-center {
-    display: flex;
-    height: 75px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  height: 75px;
+  justify-content: center;
+  align-items: center;
 }
 
 .pagination-wrapper {
 }
 
 .pagination-ul {
-    list-style-type: none;
-    font-family: 'Avenir Next Medium', Arial, Helvetica, sans-serif;
-    float: left;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  font-family: 'Avenir Next Medium', Arial, Helvetica, sans-serif;
+  float: left;
+  margin: 0;
+  padding: 0;
 }
 
 .pagination-li {
-    margin: 1px;
-    position: relative;
-    padding: 0 11px;
-    float: left;
+  margin: 1px;
+  position: relative;
+  padding: 0 11px;
+  float: left;
 }
 
 .pagination-li:not(.pagination-li-active):hover {
 }
 
 .pagination-li:not(.pagination-li-active):hover > a {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .pagination-li:not(.pagination-li-active):hover > a:before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    width: 30px;
-    height: 30px;
-    left: 50%;
-    margin-left: -15px;
-    margin-top: -8px;
-    border-radius: 100%;
-    background: #84bad1;
-    transition: all 0.2s;
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 30px;
+  height: 30px;
+  left: 50%;
+  margin-left: -15px;
+  margin-top: -8px;
+  border-radius: 100%;
+  background: #84bad1;
+  transition: all 0.2s;
 }
 
 .pagination-li-active {
 }
 
 .pagination-li-active > a {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .pagination-li-active > a:before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    width: 30px;
-    height: 30px;
-    left: 50%;
-    margin-left: -15px;
-    margin-top: -8px;
-    border-radius: 100%;
-    background: #1c86b3;
-    transition: all 0.2s;
-    color: #ffffff;
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 30px;
+  height: 30px;
+  left: 50%;
+  margin-left: -15px;
+  margin-top: -8px;
+  border-radius: 100%;
+  background: #1c86b3;
+  transition: all 0.2s;
+  color: #ffffff;
 }
 
 .pagination-a {
-    display: block;
-    position: relative;
-    font-size: 15px;
-    font-family: 'Avenir Next Medium', Arial, Helvetica, sans-serif;
-    color: #1c86b3;
+  display: block;
+  position: relative;
+  font-size: 15px;
+  font-family: 'Avenir Next Medium', Arial, Helvetica, sans-serif;
+  color: #1c86b3;
 }
 
 .pagination-leftchevron {
-    width: 10px;
-    height: 10px;
-    background-image: url(../../../assets/img/chevrondown.png);
-    background-size: 10px 10px;
-    background-repeat: no-repeat;
-    transform: rotate(90deg);
+  width: 10px;
+  height: 10px;
+  background-image: url(../../../assets/img/chevrondown.png);
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+  transform: rotate(90deg);
 }
 
 .pagination-rightchevron {
-    width: 10px;
-    height: 10px;
-    background-image: url(../../../assets/img/chevronup.png);
-    background-size: 10px 10px;
-    background-repeat: no-repeat;
-    transform: rotate(90deg);
+  width: 10px;
+  height: 10px;
+  background-image: url(../../../assets/img/chevronup.png);
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+  transform: rotate(90deg);
 }
 
 .pagination-chevrons {
-    font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
-    margin: 0 7px;
-    padding: 0;
-    color: #1d92b3;
-    font-size: 14px;
-    font-weight: normal;
-    cursor: pointer;
+  font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
+  margin: 0 7px;
+  padding: 0;
+  color: #1d92b3;
+  font-size: 14px;
+  font-weight: normal;
+  cursor: pointer;
 }
 
 .pagination-chevrons-disabled {
-    cursor: default;
-    color: #cccccc;
+  cursor: default;
+  color: #cccccc;
 }

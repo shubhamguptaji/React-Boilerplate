@@ -76,7 +76,7 @@ export default class Dropdown extends React.Component {
           !this.refs.dropdownPanel.contains(target)) ||
         (!this.props.multiple &&
           Array.from(this.refs.dropdownPanel.querySelectorAll('ul li')).some(
-            (el) => el.contains(target)
+            el => el.contains(target)
           ))
       ) {
         this.toggleDropdownPanel(false);
@@ -86,7 +86,7 @@ export default class Dropdown extends React.Component {
     }
   };
 
-  handleInputType = (event) => {
+  handleInputType = event => {
     this.setState({
       searchableText: event.target.value
     });
@@ -108,7 +108,7 @@ export default class Dropdown extends React.Component {
       const dropdownInputBounds = this.refs.dropdownBlock.getBoundingClientRect();
       if (
         dropdownInputBounds.bottom + this.maxPanelHeight >=
-        window.innerHeight &&
+          window.innerHeight &&
         this.state.dropdownPanelDirection !== 'up'
       ) {
         this.setState({
@@ -129,7 +129,7 @@ export default class Dropdown extends React.Component {
     }
   };
 
-  handleKeyDownListener = (event) => {
+  handleKeyDownListener = event => {
     if (!this.props.readOnly && !this.props.disabled) {
       if (
         this.state.showDropdownPanel &&
@@ -146,7 +146,7 @@ export default class Dropdown extends React.Component {
     }
   };
 
-  toggleDropdownPanel = (value) => {
+  toggleDropdownPanel = value => {
     this.setState(
       {
         showDropdownPanel: !isUndefined(value)
@@ -171,21 +171,21 @@ export default class Dropdown extends React.Component {
     );
     this.refs.dropdownPanel.style.width = `${dropdownInputBounds.width}px`;
     this.refs.dropdownPanel.style.left = `${dropdownInputBounds.left +
-    window.pageXOffset}px`;
+      window.pageXOffset}px`;
 
     if (this.state.dropdownPanelDirection === 'down') {
       this.refs.dropdownPanel.style.top = `${dropdownInputBounds.bottom +
-      window.pageYOffset}px`;
+        window.pageYOffset}px`;
     } else if (this.state.dropdownPanelDirection === 'up') {
       this.refs.dropdownPanel.style.top = `${dropdownInputBounds.top +
-      window.pageYOffset -
-      dropdownPanelHeight}px`;
+        window.pageYOffset -
+        dropdownPanelHeight}px`;
     }
   };
 
-  selectOption = (option) => {
+  selectOption = option => {
     this.setState(
-      (prevState) => {
+      prevState => {
         const selected = this.props.multiple
           ? toggleArrayValue(prevState.selected, option)
           : option;
@@ -201,13 +201,13 @@ export default class Dropdown extends React.Component {
     );
   };
 
-  isSelectedOption = (option) => {
+  isSelectedOption = option => {
     return (
       !isNull(this.state.selected) &&
       (this.props.multiple
-        ? this.state.selected.some((selectedOption) =>
-          isEqual(selectedOption, option)
-        )
+        ? this.state.selected.some(selectedOption =>
+            isEqual(selectedOption, option)
+          )
         : isEqual(this.state.selected, option))
     );
   };
@@ -232,57 +232,57 @@ export default class Dropdown extends React.Component {
           this.styles.dropdownPanel,
           this.state.showDropdownPanel ? this.styles.active : null
         ].join(' ')}
-        ref='dropdownPanel'
-        tabIndex='-1'
-        datauitestid='dropdownPanel'
+        ref="dropdownPanel"
+        tabIndex="-1"
+        datauitestid="dropdownPanel"
       >
         <ul>
           {this.props.source &&
-          this.props.source instanceof Array &&
-          this.props.source
-            .filter(
-              (option) =>
-                !this.props.excludeOptions.some((excludeOption) =>
-                  this.props.comparator(excludeOption, option)
-                )
-            )
-            .filter(
-              (option) =>
-                this.props.searchable &&
-                !isEmpty(this.state.searchableText) &&
-                isEmpty(this.state.selected)
-                  ? includes(
-                  option.label.toLowerCase(),
-                  this.state.searchableText.toLowerCase()
+            this.props.source instanceof Array &&
+            this.props.source
+              .filter(
+                option =>
+                  !this.props.excludeOptions.some(excludeOption =>
+                    this.props.comparator(excludeOption, option)
                   )
-                  : true
-            )
-            .map((option, index) => {
-              return (
-                <li
-                  key={JSON.stringify(option)}
-                  onClick={() => this.selectOption(option)}
-                >
-                  <DropdownElement
-                    data={option}
-                    index={index}
-                    isSelected={this.isSelectedOption(option)}
-                  />
-                </li>
-              );
-            })}
+              )
+              .filter(
+                option =>
+                  this.props.searchable &&
+                  !isEmpty(this.state.searchableText) &&
+                  isEmpty(this.state.selected)
+                    ? includes(
+                        option.label.toLowerCase(),
+                        this.state.searchableText.toLowerCase()
+                      )
+                    : true
+              )
+              .map((option, index) => {
+                return (
+                  <li
+                    key={JSON.stringify(option)}
+                    onClick={() => this.selectOption(option)}
+                  >
+                    <DropdownElement
+                      data={option}
+                      index={index}
+                      isSelected={this.isSelectedOption(option)}
+                    />
+                  </li>
+                );
+              })}
           {this.props.source &&
-          this.props.source instanceof Array &&
-          !this.props.source.filter(
-            (option) => !this.props.excludeOptions.includes(option)
-          ).length && (
-            <li
-              className={this.styles.dropdownElementNoOptions}
-              onClick={() => this.refs.dropdownBlock.focus()}
-            >
-              {this.props.emptyMessage}
-            </li>
-          )}
+            this.props.source instanceof Array &&
+            !this.props.source.filter(
+              option => !this.props.excludeOptions.includes(option)
+            ).length && (
+              <li
+                className={this.styles.dropdownElementNoOptions}
+                onClick={() => this.refs.dropdownBlock.focus()}
+              >
+                {this.props.emptyMessage}
+              </li>
+            )}
         </ul>
       </span>,
       document.body
@@ -291,10 +291,10 @@ export default class Dropdown extends React.Component {
 
   renderDropdownInput = () => {
     return (
-      <span className={this.styles.dropdownInput} ref='dropdownInput'>
+      <span className={this.styles.dropdownInput} ref="dropdownInput">
         <input
-          type='text'
-          tabIndex='-1'
+          type="text"
+          tabIndex="-1"
           readOnly={!this.props.searchable}
           onChange={this.handleInputType}
           placeholder={
@@ -347,7 +347,7 @@ export default class Dropdown extends React.Component {
           this.props.disabled ? this.styles.disabled : null,
           this.props.error ? this.styles.error : null
         ].join(' ')}
-        ref='dropdownBlock'
+        ref="dropdownBlock"
         {...tabIndexProperty}
       >
         {this.renderDropdownInput()}

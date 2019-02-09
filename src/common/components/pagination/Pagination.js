@@ -10,13 +10,13 @@ export default class Pagination extends Component {
   render() {
     const { activePage, onPageChange, totalItems, pageSize } = this.props;
     return (
-      <div className='pagination-center'>
+      <div className="pagination-center">
         <ChevronPagination
           page={activePage}
           direction={'left'}
           onChange={onPageChange}
         />
-        <div className='pagination-wrapper'>
+        <div className="pagination-wrapper">
           <HorizonPagination
             hideNavigation
             hideFirstLastPages
@@ -25,10 +25,10 @@ export default class Pagination extends Component {
             itemsCountPerPage={25}
             pageRangeDisplayed={10}
             totalItemsCount={totalItems}
-            innerClass='pagination-ul'
-            itemClass='pagination-li'
-            activeClass='pagination-li-active'
-            linkClass='pagination-a'
+            innerClass="pagination-ul"
+            itemClass="pagination-li"
+            activeClass="pagination-li-active"
+            linkClass="pagination-a"
           />
         </div>
         <ChevronPagination
@@ -52,14 +52,14 @@ const faIconHandlers = {
 function ChevronIcons(props) {
   if (props.disabled) {
     return (
-      <div className='pagination-chevrons pagination-chevrons-disabled'>
+      <div className="pagination-chevrons pagination-chevrons-disabled">
         {props.children}
       </div>
     );
   }
   return (
     <div
-      className='pagination-chevrons'
+      className="pagination-chevrons"
       onClick={() => props.onChange(props.page)}
     >
       {props.children}

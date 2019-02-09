@@ -7,7 +7,7 @@ import CoAdviser from '../../coAdviser/CoAdviser';
 import { layoutConstants } from '../utils';
 
 export default class CoAdviserField extends React.Component {
-  saveValue = (value) => {
+  saveValue = value => {
     this.props.onChange(value);
   };
 
@@ -17,7 +17,7 @@ export default class CoAdviserField extends React.Component {
     const row = [
       {
         content: (
-          <TextBlock className={styles.title} textTrimming='None'>
+          <TextBlock className={styles.title} textTrimming="None">
             {title}
           </TextBlock>
         ),
@@ -41,7 +41,7 @@ export default class CoAdviserField extends React.Component {
         content: (
           <div>
             {isOptional && (
-              <TextBlock className={styles.optional} textTrimming='None'>
+              <TextBlock className={styles.optional} textTrimming="None">
                 optional
               </TextBlock>
             )}

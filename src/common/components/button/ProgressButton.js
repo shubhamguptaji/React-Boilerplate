@@ -15,7 +15,7 @@ export default class ProgressButton extends React.Component {
   defaultButton = () => {
     return (
       <Button
-        tabIndex='0'
+        tabIndex="0"
         enabled={this.props.enabled}
         onClick={this.props.onClick}
         className={this.props.className}

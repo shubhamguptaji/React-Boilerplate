@@ -22,7 +22,7 @@ export default class ArrayClientLegalEntityField extends React.Component {
       data: isArray(props.value) && !isEmpty(props.value) ? props.value : [{}],
       showLookupFields:
         isArray(props.value) && !isEmpty(props.value)
-          ? props.value.map((value) => !isEmpty(value.lookup))
+          ? props.value.map(value => !isEmpty(value.lookup))
           : []
     };
   }
@@ -33,7 +33,7 @@ export default class ArrayClientLegalEntityField extends React.Component {
 
   get canAddAnotherEntity() {
     return this.state.data.every(
-      (value) => isObject(value) && (value.list || value.lookup)
+      value => isObject(value) && (value.list || value.lookup)
     );
   }
 
@@ -48,8 +48,8 @@ export default class ArrayClientLegalEntityField extends React.Component {
     );
   }
 
-  toggleFieldVisibility = (index) => {
-    this.setState((prevState) => {
+  toggleFieldVisibility = index => {
+    this.setState(prevState => {
       const showFields = this.state.showLookupFields.slice();
       showFields[index] = !this.state.showLookupFields[index];
       return Object.assign({}, prevState, { showLookupFields: showFields });
@@ -58,7 +58,7 @@ export default class ArrayClientLegalEntityField extends React.Component {
 
   onSelectedChanged = (index, entity, type) => {
     this.setState(
-      (prevState) => {
+      prevState => {
         const cloneData = prevState.data.slice();
         if (cloneData[index]) {
           cloneData[index][type] = entity;
@@ -71,7 +71,7 @@ export default class ArrayClientLegalEntityField extends React.Component {
 
   addAnotherEntity = () => {
     this.setState(
-      (prevState) => {
+      prevState => {
         const cloneData = prevState.data.slice();
         cloneData.push({});
 
@@ -86,7 +86,7 @@ export default class ArrayClientLegalEntityField extends React.Component {
 
   removeEntity = (index, entity) => {
     this.setState(
-      (prevState) => {
+      prevState => {
         if (this.count === 1 && entity === {}) return undefined;
 
         const cloneData = prevState.data.slice();
@@ -157,7 +157,7 @@ function LastRow(props) {
       content: (
         <div className={styles.input}>
           <Button
-            type='text'
+            type="text"
             enabled={canAddAnotherEntity}
             onClick={addAnotherEntity}
           >
@@ -197,7 +197,7 @@ function FieldRow(props) {
   const items = [
     {
       content: !index && (
-        <TextBlock className={styles.title} textTrimming='None'>
+        <TextBlock className={styles.title} textTrimming="None">
           {title}
         </TextBlock>
       ),
@@ -240,7 +240,7 @@ function FieldRow(props) {
             />
           )}
           {isOptional && (
-            <TextBlock className={styles.optional} textTrimming='None'>
+            <TextBlock className={styles.optional} textTrimming="None">
               optional
             </TextBlock>
           )}

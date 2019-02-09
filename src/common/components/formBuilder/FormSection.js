@@ -36,7 +36,7 @@ class FormSection extends React.Component {
     this.propertyRefs = null;
   }
 
-  isSectionUnchanged = (prevState) => {
+  isSectionUnchanged = prevState => {
     return (
       prevState.isVisible === this.isVisible &&
       prevState.isEnabled === this.isEnabled
@@ -44,12 +44,12 @@ class FormSection extends React.Component {
   };
 
   invalidateState = () => {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       const promises = [];
       this.setState(
-        (prevState) => {
+        prevState => {
           if (this.isSectionUnchanged(prevState)) {
-            this.propertyRefs.forEach((property) => {
+            this.propertyRefs.forEach(property => {
               promises.push(property.invalidateState());
             });
 
@@ -66,10 +66,10 @@ class FormSection extends React.Component {
     });
   };
 
-  setPropertyValueByDependencies = (propertyPath) => {
-    return new Promise((resolve) => {
+  setPropertyValueByDependencies = propertyPath => {
+    return new Promise(resolve => {
       const property = get(propertyPath.split('.'), '[1]');
-      const propertyRef = find(this.propertyRefs, (propertyRef) => {
+      const propertyRef = find(this.propertyRefs, propertyRef => {
         return property === propertyRef.props.id;
       });
 
@@ -81,7 +81,7 @@ class FormSection extends React.Component {
     });
   };
 
-  onChangeProxy = (onChange) => {
+  onChangeProxy = onChange => {
     return (property, value) => {
       isFunction(onChange) && onChange(property, value);
       this.onPropertyChangeHandler(property, value);
@@ -114,7 +114,7 @@ class FormSection extends React.Component {
             formData={this.formData}
             form={this.form}
             appearance={appearance}
-            ref={(x) => {
+            ref={x => {
               if (x) this.propertyRefs.push(x);
             }}
             onStateChanged={onStateChanged}

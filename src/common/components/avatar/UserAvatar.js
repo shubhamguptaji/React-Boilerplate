@@ -73,7 +73,7 @@ class UserAvatar extends React.Component {
     if (src || srcset) {
       inner = (
         <img
-          className='UserAvatar--img'
+          className="UserAvatar--img"
           style={imageStyle}
           src={src}
           srcSet={srcset}
@@ -101,7 +101,7 @@ class UserAvatar extends React.Component {
 
     return (
       <div aria-label={name} className={classes.join(' ')} style={style}>
-        <div className='UserAvatar--inner' style={innerStyle}>
+        <div className="UserAvatar--inner" style={innerStyle}>
           {inner}
         </div>
       </div>

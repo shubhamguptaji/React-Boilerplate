@@ -32,7 +32,7 @@ class SubNavigation extends Component {
           })}
         </ol>
         <div className={style.tabContent}>
-          {items.map((item) => {
+          {items.map(item => {
             const Component = item.component;
             const props = item.props;
             return (

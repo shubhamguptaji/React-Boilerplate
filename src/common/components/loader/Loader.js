@@ -26,7 +26,7 @@ export default class Loader extends Component {
           <ReactLoading
             type={type}
             color={defaultLoaderColor}
-            className='loadingIndicator'
+            className="loadingIndicator"
           />
         </div>
       );

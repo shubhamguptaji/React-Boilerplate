@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
-const LinkLabel = (props) => {
+const LinkLabel = props => {
   const { className, children, to, datauitestid } = props;
   const classes = cx(className);
 

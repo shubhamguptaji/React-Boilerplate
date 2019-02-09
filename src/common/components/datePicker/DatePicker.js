@@ -24,9 +24,9 @@ export default class DatePicker extends React.Component {
     if (props.range) {
       pickerMoment = props.value
         ? {
-          start: moment(props.value[0]),
-          end: moment(props.value[1])
-        }
+            start: moment(props.value[0]),
+            end: moment(props.value[1])
+          }
         : { start: moment().startOf('month'), end: moment().endOf('month') };
     } else {
       pickerMoment = props.value ? moment(props.value) : moment();
@@ -118,12 +118,12 @@ export default class DatePicker extends React.Component {
 
   preparePicker = () => {
     if (this.pickerElement) {
-      [...this.pickerNavs].forEach((nav) =>
-        [...nav.childNodes].forEach((node) => (node.tabIndex = '0'))
+      [...this.pickerNavs].forEach(nav =>
+        [...nav.childNodes].forEach(node => (node.tabIndex = '0'))
       );
-      [...this.pickerTables].forEach((table) =>
+      [...this.pickerTables].forEach(table =>
         [...table.querySelectorAll('td')].forEach(
-          (node) =>
+          node =>
             (node.tabIndex = node.classList.contains('selected') ? '0' : '-1')
         )
       );
@@ -140,7 +140,7 @@ export default class DatePicker extends React.Component {
     prevDate.classList.remove('selected');
   };
 
-  handleKeyListener = (e) => {
+  handleKeyListener = e => {
     if (this.isPickerOpen && e.keyCode === keyCodes.ESCAPE) {
       this.datePickerRef.togglePicker(false);
     }
@@ -254,8 +254,8 @@ export default class DatePicker extends React.Component {
     }
   };
 
-  onSelected = (moment) => {
-    this.setState((prevState) => {
+  onSelected = moment => {
+    this.setState(prevState => {
       if (this.props.range) {
         this.props.onChange([moment.start.toDate(), moment.end.toDate()]);
         return Object.assign({}, prevState, { moment, selected: moment });
@@ -278,13 +278,13 @@ export default class DatePicker extends React.Component {
     }
   };
 
-  onTextChange = (manualDate) => {
+  onTextChange = manualDate => {
     this.manualDate = manualDate;
   };
 
   onTextBlur = () => {
     //Check Valid Date against Formats
-    this.setState((prevState) => {
+    this.setState(prevState => {
       let changes = {};
       if (moment(this.manualDate, this.props.displayFormat, true).isValid()) {
         let valueMoment = moment(this.manualDate, this.props.displayFormat);
@@ -364,7 +364,7 @@ export default class DatePicker extends React.Component {
             disabled={this.props.disabled || this.props.readOnly}
             onChange={this.onSelected}
             isOpen={this.state.isOpen}
-            ref={(x) => (this.datePickerRef = x)}
+            ref={x => (this.datePickerRef = x)}
           >
             <Text
               value={

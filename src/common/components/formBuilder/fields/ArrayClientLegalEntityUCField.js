@@ -44,7 +44,7 @@ export default class ArrayClientLegalEntityUCField extends React.Component {
 
   onSelectedChanged = (index, entity) => {
     this.setState(
-      (prevState) => {
+      prevState => {
         const cloneData = prevState.data.slice();
         cloneData[index] = entity;
 
@@ -56,7 +56,7 @@ export default class ArrayClientLegalEntityUCField extends React.Component {
 
   addAnotherEntity = () => {
     this.setState(
-      (prevState) => {
+      prevState => {
         const cloneData = prevState.data.slice();
         cloneData.push(null);
 
@@ -68,7 +68,7 @@ export default class ArrayClientLegalEntityUCField extends React.Component {
 
   removeEntity = (index, entity) => {
     this.setState(
-      (prevState) => {
+      prevState => {
         if (this.count === 1 && entity === null) return undefined;
 
         const cloneData = prevState.data.slice();
@@ -173,7 +173,7 @@ function LastRow(props) {
       content: (
         <div className={styles.input}>
           <Button
-            type='text'
+            type="text"
             enabled={canAddAnotherEntity}
             onClick={addAnotherEntity}
           >
@@ -222,7 +222,7 @@ function FieldRow(props) {
             disabled={!isEnabled}
             readOnly={isReadOnly}
             error={!isValid}
-            onChange={(x) => onChange(index, x)}
+            onChange={x => onChange(index, x)}
           />
         </div>
       ),
@@ -239,7 +239,7 @@ function FieldRow(props) {
             />
           )}
           {isOptional && (
-            <TextBlock className={styles.optional} textTrimming='None'>
+            <TextBlock className={styles.optional} textTrimming="None">
               optional
             </TextBlock>
           )}

@@ -93,11 +93,11 @@ export default class Autocomplete extends React.Component {
           !this.refs.autocompleteBlock.contains(target) &&
           !this.refs.autocompletePanel.contains(target)) ||
         Array.from(this.refs.autocompletePanel.querySelectorAll('ul li')).some(
-          (el) => el.contains(target)
+          el => el.contains(target)
         )
       ) {
         this.setState(
-          (prevState) => {
+          prevState => {
             return Object.assign(prevState, {
               showAutocompletePanel: this.isPanelShown(false)
             });
@@ -122,7 +122,7 @@ export default class Autocomplete extends React.Component {
       const autocompleteInputBounds = this.refs.autocompleteBlock.getBoundingClientRect();
       if (
         autocompleteInputBounds.bottom + this.maxPanelHeight >=
-        window.innerHeight &&
+          window.innerHeight &&
         this.state.autocompletePanelDirection !== 'up'
       ) {
         this.setState({
@@ -130,7 +130,7 @@ export default class Autocomplete extends React.Component {
         });
       } else if (
         autocompleteInputBounds.bottom + this.maxPanelHeight <
-        window.innerHeight &&
+          window.innerHeight &&
         this.state.autocompletePanelDirection !== 'down'
       ) {
         this.setState({
@@ -144,7 +144,7 @@ export default class Autocomplete extends React.Component {
     }
   };
 
-  handleKeyDownListener = (e) => {
+  handleKeyDownListener = e => {
     if (!this.props.readOnly && !this.props.disabled) {
       if (
         this.state.showAutocompletePanel &&
@@ -159,7 +159,7 @@ export default class Autocomplete extends React.Component {
     }
   };
 
-  isPanelShown = (value) => {
+  isPanelShown = value => {
     return typeof value !== 'undefined'
       ? value
       : !this.state.showAutocompletePanel;
@@ -174,23 +174,23 @@ export default class Autocomplete extends React.Component {
     );
     this.refs.autocompletePanel.style.width = `${
       autocompleteInputBounds.width
-      }px`;
+    }px`;
     this.refs.autocompletePanel.style.left = `${autocompleteInputBounds.left +
-    window.pageXOffset}px`;
+      window.pageXOffset}px`;
 
     if (this.state.autocompletePanelDirection === 'down') {
       this.refs.autocompletePanel.style.top = `${autocompleteInputBounds.bottom +
-      window.pageYOffset}px`;
+        window.pageYOffset}px`;
     } else if (this.state.autocompletePanelDirection === 'up') {
       this.refs.autocompletePanel.style.top = `${autocompleteInputBounds.top +
-      window.pageYOffset -
-      autocompletePanelHeight}px`;
+        window.pageYOffset -
+        autocompletePanelHeight}px`;
     }
   };
 
-  selectOption = (option) => {
+  selectOption = option => {
     this.setState(
-      (prevState) => {
+      prevState => {
         return Object.assign({}, prevState, { selected: option });
       },
       () => {
@@ -200,9 +200,9 @@ export default class Autocomplete extends React.Component {
     );
   };
 
-  searchValueDebounced = (queryString) => {
+  searchValueDebounced = queryString => {
     this.setState(
-      (prevState) => {
+      prevState => {
         return Object.assign({}, prevState, {
           loading: true,
           lastSearch: queryString,
@@ -210,10 +210,10 @@ export default class Autocomplete extends React.Component {
         });
       },
       () => {
-        this.state.provider(queryString).then((data) => {
+        this.state.provider(queryString).then(data => {
           if (this.state.lastSearch === queryString) {
             this.setState(
-              (prevState) => {
+              prevState => {
                 return Object.assign({}, prevState, {
                   source: data,
                   loading: false,
@@ -236,7 +236,7 @@ export default class Autocomplete extends React.Component {
     }
 
     if (!queryString) {
-      this.setState((prevState) => {
+      this.setState(prevState => {
         return Object.assign({}, prevState, {
           loading: false,
           source: !prevState.provider ? this.props.source : [],
@@ -247,13 +247,13 @@ export default class Autocomplete extends React.Component {
       if (this.state.provider) {
         this.searchValueDebounced(queryString);
       } else {
-        this.setState((prevState) => {
+        this.setState(prevState => {
           return Object.assign({}, prevState, {
             showAutocompletePanel: this.isPanelShown(true),
             source:
               this.props.source &&
               this.props.source.filter(
-                (option) =>
+                option =>
                   option[this.props.searchField]
                     .toString()
                     .toLowerCase()
@@ -267,7 +267,7 @@ export default class Autocomplete extends React.Component {
 
   clearValue = () => {
     this.setState(
-      (prevState) => {
+      prevState => {
         return Object.assign(prevState, {
           loading: false,
           selected: null,
@@ -281,7 +281,7 @@ export default class Autocomplete extends React.Component {
     );
   };
 
-  isSelectedOption = (option) => {
+  isSelectedOption = option => {
     return this.state.selected !== null && isEqual(this.state.selected, option);
   };
 
@@ -294,40 +294,40 @@ export default class Autocomplete extends React.Component {
           this.styles.autocompletePanel,
           this.state.showAutocompletePanel ? this.styles.active : null
         ].join(' ')}
-        ref='autocompletePanel'
-        tabIndex='-1'
+        ref="autocompletePanel"
+        tabIndex="-1"
       >
         <ul>
           {this.state.source &&
-          this.state.source instanceof Array &&
-          this.state.source
-            .filter((option) => !isEqual(this.state.selected, option))
-            .map((option, index) => {
-              return (
-                <li
-                  key={JSON.stringify(option)}
-                  onClick={() => this.selectOption(option)}
-                >
-                  <AutocompleteElement
-                    data={option}
-                    index={index}
-                    isSelected={this.isSelectedOption(option)}
-                  />
-                </li>
-              );
-            })}
+            this.state.source instanceof Array &&
+            this.state.source
+              .filter(option => !isEqual(this.state.selected, option))
+              .map((option, index) => {
+                return (
+                  <li
+                    key={JSON.stringify(option)}
+                    onClick={() => this.selectOption(option)}
+                  >
+                    <AutocompleteElement
+                      data={option}
+                      index={index}
+                      isSelected={this.isSelectedOption(option)}
+                    />
+                  </li>
+                );
+              })}
           {this.state.source &&
-          this.state.source instanceof Array &&
-          !this.state.source.filter(
-            (option) => !isEqual(this.state.selected, option)
-          ).length && (
-            <li
-              className={this.styles.autocompleteElementNoOptions}
-              onClick={() => this.refs.autocompleteBlock.focus()}
-            >
-              {this.props.emptyMessage}
-            </li>
-          )}
+            this.state.source instanceof Array &&
+            !this.state.source.filter(
+              option => !isEqual(this.state.selected, option)
+            ).length && (
+              <li
+                className={this.styles.autocompleteElementNoOptions}
+                onClick={() => this.refs.autocompleteBlock.focus()}
+              >
+                {this.props.emptyMessage}
+              </li>
+            )}
         </ul>
       </span>,
       document.body
@@ -338,10 +338,10 @@ export default class Autocomplete extends React.Component {
     const AutocompleteInput = this.props.inputComponent;
 
     return (
-      <span className={this.styles.autocompleteInput} ref='autocompleteInput'>
+      <span className={this.styles.autocompleteInput} ref="autocompleteInput">
         <input
-          type='text'
-          tabIndex='-1'
+          type="text"
+          tabIndex="-1"
           readOnly={this.props.readOnly || this.props.disabled}
           key={JSON.stringify(this.state.selected)}
           placeholder={
@@ -357,7 +357,7 @@ export default class Autocomplete extends React.Component {
             this.props.disabled ? Styles.disabled : null,
             this.props.error ? Styles.error : null
           ].join(' ')}
-          onKeyUp={(e) => this.searchValue(e, e.target.value)}
+          onKeyUp={e => this.searchValue(e, e.target.value)}
         />
         <span className={Styles.autocompleteIcon}>
           {this.state.loading && (
@@ -369,13 +369,13 @@ export default class Autocomplete extends React.Component {
             </span>
           )}
           {!this.state.loading &&
-          !this.props.disabled &&
-          !this.props.readOnly &&
-          !!this.state.selected && (
-            <span className={Styles.crossIcon} onClick={this.clearValue}>
+            !this.props.disabled &&
+            !this.props.readOnly &&
+            !!this.state.selected && (
+              <span className={Styles.crossIcon} onClick={this.clearValue}>
                 &#10005;
-            </span>
-          )}
+              </span>
+            )}
         </span>
       </span>
     );
@@ -393,7 +393,7 @@ export default class Autocomplete extends React.Component {
           this.state.isFocus ? this.styles.focus : null,
           this.props.error ? this.styles.error : null
         ].join(' ')}
-        ref='autocompleteBlock'
+        ref="autocompleteBlock"
         {...tabIndexProperty}
       >
         {this.renderAutocompleteInput()}

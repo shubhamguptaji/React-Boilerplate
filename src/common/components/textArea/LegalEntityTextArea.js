@@ -35,7 +35,7 @@ class LegalEntityTextArea extends React.Component {
   }
 
   calcCharRemaining = ({ target: { value } }) => {
-    this.setState((prevState) => {
+    this.setState(prevState => {
       return Object.assign({}, prevState, {
         charRemaining: this.props.maxLength - value.length
       });
@@ -55,7 +55,7 @@ class LegalEntityTextArea extends React.Component {
 
   onLegalTextAreaChange = ({ target: { value } }) => {
     //this.props.onChange(value);
-    this.setState((prevState) => {
+    this.setState(prevState => {
       return Object.assign({}, prevState, {
         temporalValue: value
       });
@@ -63,7 +63,7 @@ class LegalEntityTextArea extends React.Component {
   };
 
   toggleLegalTextAreaFocus = () => {
-    this.setState((prevState) => {
+    this.setState(prevState => {
       return Object.assign({}, prevState, {
         isFocus: !prevState.isFocus
       });
@@ -102,14 +102,14 @@ class LegalEntityTextArea extends React.Component {
           onChange={this.onLegalTextAreaChange}
         />
         {this.props.maxLength &&
-        !this.props.readonly && (
-          <div
-            className={this.styles.charCounter}
-            style={{ visibility: this.state.isFocus ? 'visible' : 'hidden' }}
-          >
-            {this.state.charRemaining} characters remaining
-          </div>
-        )}
+          !this.props.readonly && (
+            <div
+              className={this.styles.charCounter}
+              style={{ visibility: this.state.isFocus ? 'visible' : 'hidden' }}
+            >
+              {this.state.charRemaining} characters remaining
+            </div>
+          )}
       </div>
     );
   }

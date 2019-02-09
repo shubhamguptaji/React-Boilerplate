@@ -32,7 +32,7 @@ class FormBuilder extends React.Component {
         .properties) {
         const property = this.props.schema.sections[sectionKey].properties[
           propertyKey
-          ];
+        ];
         if (
           !property.hasOwnProperty('dependsOn') ||
           !isArray(property.dependsOn)
@@ -40,7 +40,7 @@ class FormBuilder extends React.Component {
           continue;
         }
 
-        property.dependsOn.forEach((dependOn) => {
+        property.dependsOn.forEach(dependOn => {
           if (!dependencies.hasOwnProperty(dependOn)) {
             dependencies[dependOn] = [];
           }
@@ -92,7 +92,7 @@ class FormBuilder extends React.Component {
         form={this.form}
         appearance={this.formAppearance}
         dependencies={this.formDependencies}
-        ref={(section) => {
+        ref={section => {
           if (section) this.sectionRefs.push(section);
         }}
         id={sectionId}
@@ -104,7 +104,7 @@ class FormBuilder extends React.Component {
 
   onValidChangeHandler = (property, section, error) => {
     const hasError = isArray(error)
-      ? error.some((item) => !isEmpty(item))
+      ? error.some(item => !isEmpty(item))
       : error;
     if (hasError) {
       set(this.errorMap, `${section}.${property}`, error);
@@ -117,7 +117,7 @@ class FormBuilder extends React.Component {
     this.props.onError(this.errorMap);
   };
 
-  onChangeProxy = (onChange) => {
+  onChangeProxy = onChange => {
     return (section, property, value) => {
       isFunction(onChange) && onChange(section, property, value);
       this.onSectionChangeHandler(section, property, value);
@@ -172,9 +172,9 @@ class FormBuilder extends React.Component {
     set(this.form, changedPropertyPath, { value: value });
 
     if (this.formDependencies.hasOwnProperty(changedPropertyPath)) {
-      this.formDependencies[changedPropertyPath].forEach((dependency) => {
+      this.formDependencies[changedPropertyPath].forEach(dependency => {
         const dependencySection = get(dependency.split('.'), '[0]');
-        const sectionRef = find(this.sectionRefs, (sectionRef) => {
+        const sectionRef = find(this.sectionRefs, sectionRef => {
           return dependencySection === sectionRef.props.id;
         });
 
@@ -184,7 +184,7 @@ class FormBuilder extends React.Component {
       });
     }
 
-    this.sectionRefs.forEach((section) => {
+    this.sectionRefs.forEach(section => {
       section.invalidateState();
     });
 
@@ -202,7 +202,7 @@ class FormBuilder extends React.Component {
 
     const promises = [];
 
-    this.sectionRefs.forEach((s) => promises.push(s.invalidateState()));
+    this.sectionRefs.forEach(s => promises.push(s.invalidateState()));
 
     Promise.all(promises).then(() => {
       this.props.onSubmit(this.formData);

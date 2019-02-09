@@ -34,7 +34,7 @@ export default class ArrayThirdPartyField extends React.Component {
 
   get canAddAnotherEntity() {
     return this.state.data.every(
-      (value) =>
+      value =>
         isObject(value) && !isEmpty(value.name) && !isEmpty(value.domicile)
     );
   }
@@ -44,12 +44,12 @@ export default class ArrayThirdPartyField extends React.Component {
   }
 
   riseOnValueChanged() {
-    this.props.onChange(this.state.data.filter((value) => !isEmpty(value)));
+    this.props.onChange(this.state.data.filter(value => !isEmpty(value)));
   }
 
   onSelectedChanged = (index, entity, type) => {
     this.setState(
-      (prevState) => {
+      prevState => {
         const cloneData = prevState.data.slice();
 
         if (isNull(entity)) {
@@ -73,7 +73,7 @@ export default class ArrayThirdPartyField extends React.Component {
 
   addAnotherEntity = () => {
     this.setState(
-      (prevState) => {
+      prevState => {
         const cloneData = prevState.data.slice();
         cloneData.push({});
 
@@ -85,7 +85,7 @@ export default class ArrayThirdPartyField extends React.Component {
 
   removeEntity = (index, entity) => {
     this.setState(
-      (prevState) => {
+      prevState => {
         if (this.count === 1 && entity === {}) return undefined;
 
         const cloneData = prevState.data.slice();
@@ -158,7 +158,7 @@ function LastRow(props) {
       content: (
         <div className={styles.input}>
           <Button
-            type='text'
+            type="text"
             enabled={canAddAnotherEntity}
             onClick={addAnotherEntity}
           >
@@ -199,7 +199,7 @@ function NameRow(props) {
   const items = [
     {
       content: (
-        <TextBlock className={styles.title} textTrimming='None'>
+        <TextBlock className={styles.title} textTrimming="None">
           {title.name}
         </TextBlock>
       ),
@@ -217,7 +217,7 @@ function NameRow(props) {
             disabled={!isEnabled}
             readOnly={isReadOnly}
             error={!isValid}
-            onChange={(x) => onChange(index, x, 'name')}
+            onChange={x => onChange(index, x, 'name')}
           />
         </div>
       ),
@@ -234,7 +234,7 @@ function NameRow(props) {
             />
           )}
           {isOptional && (
-            <TextBlock className={styles.optional} textTrimming='None'>
+            <TextBlock className={styles.optional} textTrimming="None">
               optional
             </TextBlock>
           )}
@@ -272,7 +272,7 @@ function DomicileRow(props) {
   const items = [
     {
       content: (
-        <TextBlock className={styles.title} textTrimming='None'>
+        <TextBlock className={styles.title} textTrimming="None">
           {title.domicile}
         </TextBlock>
       ),
@@ -292,7 +292,7 @@ function DomicileRow(props) {
             disabled={!isEnabled}
             readOnly={isReadOnly}
             error={!isValid}
-            onChange={(x) => onChange(index, x, 'domicile')}
+            onChange={x => onChange(index, x, 'domicile')}
           />
         </div>
       ),
@@ -302,7 +302,7 @@ function DomicileRow(props) {
       content: (
         <div className={styles.thirdColumn}>
           {isOptional && (
-            <TextBlock className={styles.optional} textTrimming='None'>
+            <TextBlock className={styles.optional} textTrimming="None">
               optional
             </TextBlock>
           )}

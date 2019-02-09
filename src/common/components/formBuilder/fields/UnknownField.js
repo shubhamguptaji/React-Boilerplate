@@ -8,7 +8,7 @@ export default class StringField extends React.Component {
     const items = [
       {
         content: (
-          <TextBlock className={styles.title} textTrimming='None'>
+          <TextBlock className={styles.title} textTrimming="None">
             {title}
           </TextBlock>
         ),

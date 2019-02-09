@@ -21,7 +21,7 @@ export default class FocusTrap extends React.Component {
     document.removeEventListener('keydown', this.handleTabPressListener);
   }
 
-  handleTabPressListener = (e) => {
+  handleTabPressListener = e => {
     if (!this.props.disabled) {
       switch (true) {
         case e.shiftKey && e.keyCode === keyCodes.TAB:
@@ -41,9 +41,9 @@ export default class FocusTrap extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div data-start tabIndex='0' ref={(x) => (this.trapStartRef = x)} />
+        <div data-start tabIndex="0" ref={x => (this.trapStartRef = x)} />
         {this.props.children}
-        <div data-end tabIndex='0' ref={(x) => (this.trapEndRef = x)} />
+        <div data-end tabIndex="0" ref={x => (this.trapEndRef = x)} />
       </React.Fragment>
     );
   }

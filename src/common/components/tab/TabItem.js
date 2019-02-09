@@ -9,7 +9,7 @@ function TabItem(props) {
 
   return (
     <div label={label} tabClass={tabClass} index={index} id={id}>
-      {children.map((child) => {
+      {children.map(child => {
         return child.props.children;
       })}
     </div>

@@ -18,7 +18,7 @@ export default class CheckboxGroup extends React.Component {
   }
 
   onSelected = (value, state) => {
-    this.setState((prevState) => {
+    this.setState(prevState => {
       const newValue = state
         ? addUniqueArrayValue(prevState.value, value)
         : removeUniqueArrayValue(prevState.value, value);
@@ -32,27 +32,27 @@ export default class CheckboxGroup extends React.Component {
     return (
       <React.Fragment>
         {this.props.source &&
-        this.props.source.map((option) => {
-          const optionLabel =
-            option.label !== undefined && option.label !== null
-              ? option.label
-              : option;
-          const optionValue =
-            option.value !== undefined && option.value !== null
-              ? option.value
-              : option;
+          this.props.source.map(option => {
+            const optionLabel =
+              option.label !== undefined && option.label !== null
+                ? option.label
+                : option;
+            const optionValue =
+              option.value !== undefined && option.value !== null
+                ? option.value
+                : option;
 
-          return (
-            <Checkbox
-              {...this.props}
-              key={optionValue}
-              label={optionLabel}
-              value={optionValue}
-              checked={this.state.value.includes(optionValue)}
-              onChange={(state) => this.onSelected(optionValue, state)}
-            />
-          );
-        })}
+            return (
+              <Checkbox
+                {...this.props}
+                key={optionValue}
+                label={optionLabel}
+                value={optionValue}
+                checked={this.state.value.includes(optionValue)}
+                onChange={state => this.onSelected(optionValue, state)}
+              />
+            );
+          })}
       </React.Fragment>
     );
   }

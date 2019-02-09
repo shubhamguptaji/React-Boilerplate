@@ -7,7 +7,7 @@ export default class TextBox extends React.Component {
     const value = this.props.value;
 
     return (
-      <input defaultValue={value} onChange={(e) => onChange(e.target.value)} />
+      <input defaultValue={value} onChange={e => onChange(e.target.value)} />
     );
   }
 }

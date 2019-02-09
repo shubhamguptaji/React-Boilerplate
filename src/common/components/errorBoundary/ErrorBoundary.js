@@ -26,7 +26,7 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   showError(error) {
     return dispatch(showError(error));
   }
