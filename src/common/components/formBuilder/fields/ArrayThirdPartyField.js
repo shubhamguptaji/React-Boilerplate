@@ -58,7 +58,7 @@ export default class ArrayThirdPartyField extends React.Component {
           cloneData[index][type] = entity;
 
           if (type === 'name') {
-            cloneData[index]['domicile'] = {
+            cloneData[index].domicile = {
               label: entity.country,
               value: entity.countryCode
             };
@@ -86,7 +86,9 @@ export default class ArrayThirdPartyField extends React.Component {
   removeEntity = (index, entity) => {
     this.setState(
       prevState => {
-        if (this.count === 1 && entity === {}) return undefined;
+        if (this.count === 1 && entity === {}) {
+          return undefined;
+        }
 
         const cloneData = prevState.data.slice();
         cloneData.splice(index, 1);

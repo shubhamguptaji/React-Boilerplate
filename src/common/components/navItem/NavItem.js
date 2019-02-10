@@ -1,10 +1,10 @@
-//GLOBAL imports
+// GLOBAL imports
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Popup } from 'horizon-ui-react';
-//LOCAL imports
+// LOCAL imports
 import style from './NavItem.less';
-//import { Icon } from '../';
+// import { Icon } from '../';
 
 class NavItem extends Component {
   render() {

@@ -47,13 +47,9 @@ function getTrimmedLogForEmail(log) {
 }
 
 function createMail(email, subject, body) {
-  const result =
-    'mailto:' +
-    email +
-    '&subject=' +
-    subject +
-    '&body=' +
-    encodeURIComponent(body);
+  const result = `mailto:${email}&subject=${subject}&body=${encodeURIComponent(
+    body
+  )}`;
 
   return result;
 }

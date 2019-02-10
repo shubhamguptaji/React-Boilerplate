@@ -11,7 +11,9 @@ const cx = classNames.bind(Styles);
 
 export default class Button extends React.Component {
   onClick = e => {
-    if (this.props.enabled) this.props.onClick(e);
+    if (this.props.enabled) {
+      this.props.onClick(e);
+    }
   };
 
   get styles() {
@@ -25,56 +27,44 @@ export default class Button extends React.Component {
     );
   }
 
-  primaryButton = () => {
-    return (
-      <div
-        tabIndex="0"
-        onClick={this.onClick}
-        onKeyUp={({ keyCode }) =>
-          isSubmitKey(keyCode) ? this.onClick() : null
-        }
-        className={this.styles}
-        data-button
-        datauitestid={this.props.datauitestid ? this.props.datauitestid : null}
-      >
-        {this.props.children}
-      </div>
-    );
-  };
+  primaryButton = () => (
+    <div
+      tabIndex="0"
+      onClick={this.onClick}
+      onKeyUp={({ keyCode }) => (isSubmitKey(keyCode) ? this.onClick() : null)}
+      className={this.styles}
+      data-button
+      datauitestid={this.props.datauitestid ? this.props.datauitestid : null}
+    >
+      {this.props.children}
+    </div>
+  );
 
-  secondaryButton = () => {
-    return (
-      <div
-        tabIndex="0"
-        onClick={this.onClick}
-        onKeyUp={({ keyCode }) =>
-          isSubmitKey(keyCode) ? this.onClick() : null
-        }
-        className={this.styles}
-        data-button
-        datauitestid={this.props.datauitestid ? this.props.datauitestid : null}
-      >
-        {this.props.children}
-      </div>
-    );
-  };
+  secondaryButton = () => (
+    <div
+      tabIndex="0"
+      onClick={this.onClick}
+      onKeyUp={({ keyCode }) => (isSubmitKey(keyCode) ? this.onClick() : null)}
+      className={this.styles}
+      data-button
+      datauitestid={this.props.datauitestid ? this.props.datauitestid : null}
+    >
+      {this.props.children}
+    </div>
+  );
 
-  textButton = () => {
-    return (
-      <div
-        tabIndex="0"
-        onClick={this.onClick}
-        onKeyUp={({ keyCode }) =>
-          isSubmitKey(keyCode) ? this.onClick() : null
-        }
-        className={this.styles}
-        data-button
-        datauitestid={this.props.datauitestid ? this.props.datauitestid : null}
-      >
-        {this.props.children}
-      </div>
-    );
-  };
+  textButton = () => (
+    <div
+      tabIndex="0"
+      onClick={this.onClick}
+      onKeyUp={({ keyCode }) => (isSubmitKey(keyCode) ? this.onClick() : null)}
+      className={this.styles}
+      data-button
+      datauitestid={this.props.datauitestid ? this.props.datauitestid : null}
+    >
+      {this.props.children}
+    </div>
+  );
 
   render() {
     switch (this.props.type) {

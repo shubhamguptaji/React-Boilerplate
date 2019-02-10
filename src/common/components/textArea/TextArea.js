@@ -19,11 +19,11 @@ class TextArea extends React.Component {
   }
 
   calcCharRemaining = ({ target: { value } }) => {
-    this.setState(prevState => {
-      return Object.assign({}, prevState, {
+    this.setState(prevState =>
+      Object.assign({}, prevState, {
         charRemaining: this.props.maxLength - value.length
-      });
-    });
+      })
+    );
   };
 
   onTextAreaFocus = () => {
@@ -41,11 +41,11 @@ class TextArea extends React.Component {
   };
 
   toggleTextAreaFocus = () => {
-    this.setState(prevState => {
-      return Object.assign({}, prevState, {
+    this.setState(prevState =>
+      Object.assign({}, prevState, {
         isFocus: !prevState.isFocus
-      });
-    });
+      })
+    );
   };
 
   render() {

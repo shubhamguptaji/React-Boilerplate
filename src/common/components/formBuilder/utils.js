@@ -29,7 +29,9 @@ class FormAppearance {
   resolveByProperty(path, propOrType) {
     const view = get(this.uiSchema, path, undefined);
 
-    if (!isUndefined(view)) return view;
+    if (!isUndefined(view)) {
+      return view;
+    }
 
     return isUndefined(this.uiSchema[propOrType])
       ? UnknownField

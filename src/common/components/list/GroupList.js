@@ -1,9 +1,9 @@
-//GLOBAL Imports
+// GLOBAL Imports
 import React from 'react';
 import isFunction from 'lodash/isFunction';
 import map from 'lodash/map';
 import sortBy from 'lodash/sortBy';
-//LOCAL Imports
+// LOCAL Imports
 import { List } from '../index';
 import * as misc from '../../utils/misc';
 import style from './GroupList.less';
@@ -32,23 +32,20 @@ const GroupList = props => {
       groupOrderSelector,
       groupDisplaySelector
     );
-    return map(grouped, group => {
-      return (
-        <GroupItem
-          key={group.key}
-          group={group}
-          headerTemplate={headerTemplate}
-          headerTemplateSelector={headerTemplateSelector}
-          footerTemplate={footerTemplate}
-          footerTemplateSelector={footerTemplateSelector}
-          itemTemplate={itemTemplate}
-          orderInGroupSelector={orderInGroupSelector}
-        />
-      );
-    });
-  } else {
-    return <List items={items} itemTemplate={itemTemplate} />;
+    return map(grouped, group => (
+      <GroupItem
+        key={group.key}
+        group={group}
+        headerTemplate={headerTemplate}
+        headerTemplateSelector={headerTemplateSelector}
+        footerTemplate={footerTemplate}
+        footerTemplateSelector={footerTemplateSelector}
+        itemTemplate={itemTemplate}
+        orderInGroupSelector={orderInGroupSelector}
+      />
+    ));
   }
+  return <List items={items} itemTemplate={itemTemplate} />;
 };
 
 function GroupItem(props) {

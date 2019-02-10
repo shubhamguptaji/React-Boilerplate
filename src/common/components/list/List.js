@@ -2,7 +2,7 @@ import React from 'react';
 import * as arrayUtils from '../../utils/arrayUtils.js';
 import * as misc from '../../utils/misc.js';
 
-//TODO: add error handling
+// TODO: add error handling
 function List(props) {
   const items = props.items;
   const keySelector = props.keySelector;
@@ -16,24 +16,21 @@ function List(props) {
     return <NoItemsTemplate />;
   }
 
-  //Check if we are grouping items
+  // Check if we are grouping items
   if (misc.isFunction(keySelector)) {
     const grouped = arrayUtils.groupBy(items, keySelector);
-    //Grouping view
-    return grouped.map(function(group) {
-      return (
-        <GroupItem
-          key={group.key}
-          group={group}
-          headerTemplate={headerTemplate}
-          itemTemplate={itemTemplate}
-        />
-      );
-    });
-  } else {
-    //Flat view (without grouping).
-    return <ListItems items={items} itemTemplate={itemTemplate} />;
+    // Grouping view
+    return grouped.map(group => (
+      <GroupItem
+        key={group.key}
+        group={group}
+        headerTemplate={headerTemplate}
+        itemTemplate={itemTemplate}
+      />
+    ));
   }
+  // Flat view (without grouping).
+  return <ListItems items={items} itemTemplate={itemTemplate} />;
 }
 
 function GroupItem(props) {
@@ -53,9 +50,9 @@ function GroupItem(props) {
 function ListItems(props) {
   const items = props.items;
   const ItemTemplate = props.itemTemplate;
-  return items.map(function(item, index) {
-    return <ItemTemplate key={index} item={item} index={index} />;
-  });
+  return items.map((item, index) => (
+    <ItemTemplate key={index} item={item} index={index} />
+  ));
 }
 
 function DefaultEmptyTemplate() {

@@ -35,11 +35,11 @@ class LegalEntityTextArea extends React.Component {
   }
 
   calcCharRemaining = ({ target: { value } }) => {
-    this.setState(prevState => {
-      return Object.assign({}, prevState, {
+    this.setState(prevState =>
+      Object.assign({}, prevState, {
         charRemaining: this.props.maxLength - value.length
-      });
-    });
+      })
+    );
   };
 
   onLegalTextAreaFocus = () => {
@@ -54,26 +54,26 @@ class LegalEntityTextArea extends React.Component {
   };
 
   onLegalTextAreaChange = ({ target: { value } }) => {
-    //this.props.onChange(value);
-    this.setState(prevState => {
-      return Object.assign({}, prevState, {
+    // this.props.onChange(value);
+    this.setState(prevState =>
+      Object.assign({}, prevState, {
         temporalValue: value
-      });
-    });
+      })
+    );
   };
 
   toggleLegalTextAreaFocus = () => {
-    this.setState(prevState => {
-      return Object.assign({}, prevState, {
+    this.setState(prevState =>
+      Object.assign({}, prevState, {
         isFocus: !prevState.isFocus
-      });
-    });
+      })
+    );
   };
 
   render() {
     return (
       <div
-        //ref={'legalTextArea'}
+        // ref={'legalTextArea'}
         className={[
           this.styles.textAreaContainer,
           this.props.readOnly ? this.styles.readonly : null,

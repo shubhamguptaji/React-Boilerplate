@@ -79,7 +79,7 @@ class FormBuilder extends React.Component {
 
   createSection = ([sectionKey, sectionInfo], index) => {
     const sectionId = sectionKey;
-    const onChange = sectionInfo['onChange'];
+    const onChange = sectionInfo.onChange;
 
     return (
       <FormSection
@@ -93,7 +93,9 @@ class FormBuilder extends React.Component {
         appearance={this.formAppearance}
         dependencies={this.formDependencies}
         ref={section => {
-          if (section) this.sectionRefs.push(section);
+          if (section) {
+            this.sectionRefs.push(section);
+          }
         }}
         id={sectionId}
         key={sectionId}
@@ -111,17 +113,17 @@ class FormBuilder extends React.Component {
     } else {
       unset(this.errorMap, `${section}.${property}`);
 
-      if (isEmpty(get(this.errorMap, section))) unset(this.errorMap, section);
+      if (isEmpty(get(this.errorMap, section))) {
+        unset(this.errorMap, section);
+      }
     }
 
     this.props.onError(this.errorMap);
   };
 
-  onChangeProxy = onChange => {
-    return (section, property, value) => {
-      isFunction(onChange) && onChange(section, property, value);
-      this.onSectionChangeHandler(section, property, value);
-    };
+  onChangeProxy = onChange => (section, property, value) => {
+    isFunction(onChange) && onChange(section, property, value);
+    this.onSectionChangeHandler(section, property, value);
   };
 
   onStateChangedHandler = (section, property, state) => {
@@ -174,9 +176,10 @@ class FormBuilder extends React.Component {
     if (this.formDependencies.hasOwnProperty(changedPropertyPath)) {
       this.formDependencies[changedPropertyPath].forEach(dependency => {
         const dependencySection = get(dependency.split('.'), '[0]');
-        const sectionRef = find(this.sectionRefs, sectionRef => {
-          return dependencySection === sectionRef.props.id;
-        });
+        const sectionRef = find(
+          this.sectionRefs,
+          sectionRef => dependencySection === sectionRef.props.id
+        );
 
         if (sectionRef) {
           sectionRef.setPropertyValueByDependencies(dependency);

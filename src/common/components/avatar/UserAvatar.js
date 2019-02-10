@@ -1,4 +1,4 @@
-//IN: extracted and updated code from react-user-avatar library
+// IN: extracted and updated code from react-user-avatar library
 
 import React from 'react';
 import initials from 'initials';
@@ -41,7 +41,9 @@ class UserAvatar extends React.Component {
 
     let size = this.props.size;
 
-    if (!name) throw new Error('UserAvatar requires a name');
+    if (!name) {
+      throw new Error('UserAvatar requires a name');
+    }
 
     let abbr = initials(name);
     if (numberOfLettersInAvatar && numberOfLettersInAvatar <= abbr.length) {

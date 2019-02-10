@@ -39,12 +39,10 @@ export default class ArrayClientLegalEntityField extends React.Component {
 
   riseOnValueChanged() {
     this.props.onChange(
-      this.state.data.filter(isObject).map((value, index) => {
-        return {
-          list: !this.state.showLookupFields[index] ? value.list : null,
-          lookup: this.state.showLookupFields[index] ? value.lookup : null
-        };
-      })
+      this.state.data.filter(isObject).map((value, index) => ({
+        list: !this.state.showLookupFields[index] ? value.list : null,
+        lookup: this.state.showLookupFields[index] ? value.lookup : null
+      }))
     );
   }
 
@@ -87,7 +85,9 @@ export default class ArrayClientLegalEntityField extends React.Component {
   removeEntity = (index, entity) => {
     this.setState(
       prevState => {
-        if (this.count === 1 && entity === {}) return undefined;
+        if (this.count === 1 && entity === {}) {
+          return undefined;
+        }
 
         const cloneData = prevState.data.slice();
         cloneData.splice(index, 1);

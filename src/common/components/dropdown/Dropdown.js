@@ -91,7 +91,7 @@ export default class Dropdown extends React.Component {
       searchableText: event.target.value
     });
 
-    //IN: handle when we cleared the input
+    // IN: handle when we cleared the input
     if (isEmpty(event.target.value)) {
       this.setState({
         selected: null
@@ -201,26 +201,22 @@ export default class Dropdown extends React.Component {
     );
   };
 
-  isSelectedOption = option => {
-    return (
-      !isNull(this.state.selected) &&
-      (this.props.multiple
-        ? this.state.selected.some(selectedOption =>
-            isEqual(selectedOption, option)
-          )
-        : isEqual(this.state.selected, option))
-    );
-  };
+  isSelectedOption = option =>
+    !isNull(this.state.selected) &&
+    (this.props.multiple
+      ? this.state.selected.some(selectedOption =>
+          isEqual(selectedOption, option)
+        )
+      : isEqual(this.state.selected, option));
 
   dropdownInputValue = () => {
     if (this.props.searchable) {
       return this.state.searchableText;
-    } else {
-      const DropdownInput = this.props.inputComponent;
-      return !this.props.error && this.state.selected
-        ? DropdownInput(this.state.selected)
-        : '';
     }
+    const DropdownInput = this.props.inputComponent;
+    return !this.props.error && this.state.selected
+      ? DropdownInput(this.state.selected)
+      : '';
   };
 
   renderDropdownPanel = () => {
@@ -257,20 +253,18 @@ export default class Dropdown extends React.Component {
                       )
                     : true
               )
-              .map((option, index) => {
-                return (
-                  <li
-                    key={JSON.stringify(option)}
-                    onClick={() => this.selectOption(option)}
-                  >
-                    <DropdownElement
-                      data={option}
-                      index={index}
-                      isSelected={this.isSelectedOption(option)}
-                    />
-                  </li>
-                );
-              })}
+              .map((option, index) => (
+                <li
+                  key={JSON.stringify(option)}
+                  onClick={() => this.selectOption(option)}
+                >
+                  <DropdownElement
+                    data={option}
+                    index={index}
+                    isSelected={this.isSelectedOption(option)}
+                  />
+                </li>
+              ))}
           {this.props.source &&
             this.props.source instanceof Array &&
             !this.props.source.filter(
@@ -289,52 +283,48 @@ export default class Dropdown extends React.Component {
     );
   };
 
-  renderDropdownInput = () => {
-    return (
-      <span className={this.styles.dropdownInput} ref="dropdownInput">
-        <input
-          type="text"
-          tabIndex="-1"
-          readOnly={!this.props.searchable}
-          onChange={this.handleInputType}
-          placeholder={
-            this.props.error ? this.props.errorMsg : this.props.placeholder
-          }
-          value={this.dropdownInputValue()}
-          className={[
-            this.props.readOnly ? Styles.readonly : null,
-            this.props.disabled ? Styles.disabled : null,
-            this.props.error ? Styles.error : null
-          ].join(' ')}
-          datauitestid={
-            this.props.datauitestid ? this.props.datauitestid : null
-          }
-        />
-        <span
-          className={[
-            Styles.dropdownIcon,
-            this.props.readOnly || this.props.disabled ? Styles.disabled : null
-          ].join(' ')}
-        >
-          {this.props.loading && (
-            <span className={Styles.loadingIcon}>
-              <div />
-              <div />
-              <div />
-              <div />
-            </span>
-          )}
-          {!this.props.loading && (
-            <span
-              className={
-                this.state.showDropdownPanel ? Styles.caretUp : Styles.caretDown
-              }
-            />
-          )}
-        </span>
+  renderDropdownInput = () => (
+    <span className={this.styles.dropdownInput} ref="dropdownInput">
+      <input
+        type="text"
+        tabIndex="-1"
+        readOnly={!this.props.searchable}
+        onChange={this.handleInputType}
+        placeholder={
+          this.props.error ? this.props.errorMsg : this.props.placeholder
+        }
+        value={this.dropdownInputValue()}
+        className={[
+          this.props.readOnly ? Styles.readonly : null,
+          this.props.disabled ? Styles.disabled : null,
+          this.props.error ? Styles.error : null
+        ].join(' ')}
+        datauitestid={this.props.datauitestid ? this.props.datauitestid : null}
+      />
+      <span
+        className={[
+          Styles.dropdownIcon,
+          this.props.readOnly || this.props.disabled ? Styles.disabled : null
+        ].join(' ')}
+      >
+        {this.props.loading && (
+          <span className={Styles.loadingIcon}>
+            <div />
+            <div />
+            <div />
+            <div />
+          </span>
+        )}
+        {!this.props.loading && (
+          <span
+            className={
+              this.state.showDropdownPanel ? Styles.caretUp : Styles.caretDown
+            }
+          />
+        )}
       </span>
-    );
-  };
+    </span>
+  );
 
   render() {
     const tabIndexProperty =

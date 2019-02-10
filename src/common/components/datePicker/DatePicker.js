@@ -1,6 +1,6 @@
 // GLOBAL imports
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM, { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import isEqual from 'lodash/isEqual';
@@ -150,7 +150,9 @@ export default class DatePicker extends React.Component {
       this.pickerElement &&
       this.pickerElement.contains(e.target)
     ) {
-      if (isArrowKeys(e.keyCode)) e.preventDefault();
+      if (isArrowKeys(e.keyCode)) {
+        e.preventDefault();
+      }
 
       if (this.pickerActiveNav.contains(e.target) && isEnterKey(e.keyCode)) {
         e.target.click();
@@ -259,15 +261,14 @@ export default class DatePicker extends React.Component {
       if (this.props.range) {
         this.props.onChange([moment.start.toDate(), moment.end.toDate()]);
         return Object.assign({}, prevState, { moment, selected: moment });
-      } else {
-        this.props.onChange(moment.toDate());
-        this.manualDate = moment.format(this.props.displayFormat).toUpperCase();
-        return Object.assign({}, prevState, {
-          moment,
-          selected: moment,
-          error: false
-        });
       }
+      this.props.onChange(moment.toDate());
+      this.manualDate = moment.format(this.props.displayFormat).toUpperCase();
+      return Object.assign({}, prevState, {
+        moment,
+        selected: moment,
+        error: false
+      });
     });
   };
 
@@ -283,7 +284,7 @@ export default class DatePicker extends React.Component {
   };
 
   onTextBlur = () => {
-    //Check Valid Date against Formats
+    // Check Valid Date against Formats
     this.setState(prevState => {
       let changes = {};
       if (moment(this.manualDate, this.props.displayFormat, true).isValid()) {
@@ -350,58 +351,57 @@ export default class DatePicker extends React.Component {
           </span>
         </DatetimeRangePickerTrigger>
       );
-    } else {
-      return (
-        <FocusTrap disabled={!this.isPickerOpen}>
-          <DatetimePickerTrigger
-            className={Styles.customDatePicker}
-            moment={this.state.moment}
-            closeOnSelectDay={true}
-            showCalendarPicker={this.props.date}
-            showTimePicker={this.props.time}
-            minDate={this.state.minDate}
-            maxDate={this.state.maxDate}
-            disabled={this.props.disabled || this.props.readOnly}
-            onChange={this.onSelected}
-            isOpen={this.state.isOpen}
-            ref={x => (this.datePickerRef = x)}
-          >
-            <Text
-              value={
-                this.state.selected &&
-                this.state.selected.format(this.state.format).toUpperCase()
-              }
-              readOnly={this.props.readOnly}
-              disabled={this.props.disabled}
-              error={this.state.error}
-              errorMsg={this.props.errorMsg}
-              placeholder={this.props.placeholder}
-              throttleTime={0}
-              onChange={this.onTextChange}
-              onBlur={this.onTextBlur}
-              onKeyUp={this.onTextKeyUp}
-            />
-            <span
-              className={[
-                Styles.calendarIcon,
-                this.props.disabled || this.props.readOnly
-                  ? Styles.disabled
-                  : null
-              ].join(' ')}
-              datauitestid={
-                this.props.datauitestid ? this.props.datauitestid : null
-              }
-            >
-              <IconButton
-                path={calendarIcon}
-                className={Styles.calendarIconDim}
-                enabled={!this.props.disabled && !this.props.readOnly}
-              />
-            </span>
-          </DatetimePickerTrigger>
-        </FocusTrap>
-      );
     }
+    return (
+      <FocusTrap disabled={!this.isPickerOpen}>
+        <DatetimePickerTrigger
+          className={Styles.customDatePicker}
+          moment={this.state.moment}
+          closeOnSelectDay={true}
+          showCalendarPicker={this.props.date}
+          showTimePicker={this.props.time}
+          minDate={this.state.minDate}
+          maxDate={this.state.maxDate}
+          disabled={this.props.disabled || this.props.readOnly}
+          onChange={this.onSelected}
+          isOpen={this.state.isOpen}
+          ref={x => (this.datePickerRef = x)}
+        >
+          <Text
+            value={
+              this.state.selected &&
+              this.state.selected.format(this.state.format).toUpperCase()
+            }
+            readOnly={this.props.readOnly}
+            disabled={this.props.disabled}
+            error={this.state.error}
+            errorMsg={this.props.errorMsg}
+            placeholder={this.props.placeholder}
+            throttleTime={0}
+            onChange={this.onTextChange}
+            onBlur={this.onTextBlur}
+            onKeyUp={this.onTextKeyUp}
+          />
+          <span
+            className={[
+              Styles.calendarIcon,
+              this.props.disabled || this.props.readOnly
+                ? Styles.disabled
+                : null
+            ].join(' ')}
+            datauitestid={
+              this.props.datauitestid ? this.props.datauitestid : null
+            }
+          >
+            <IconButton
+              path={calendarIcon}
+              className={Styles.calendarIconDim}
+              enabled={!this.props.disabled && !this.props.readOnly}
+            />
+          </span>
+        </DatetimePickerTrigger>
+      </FocusTrap>
+    );
   }
 }
 

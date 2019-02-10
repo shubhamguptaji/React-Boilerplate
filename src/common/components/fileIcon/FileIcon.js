@@ -3,9 +3,7 @@ import fileExtension from 'file-extension';
 
 const importAll = r => {
   const images = {};
-  r.keys().map((item, index) => {
-    return (images[item.replace('./', '')] = r(item));
-  });
+  r.keys().map((item, index) => (images[item.replace('./', '')] = r(item)));
   return images;
 };
 

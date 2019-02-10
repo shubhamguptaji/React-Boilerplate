@@ -1,4 +1,4 @@
-//GLOBAL import
+// GLOBAL import
 import isBoolean from 'lodash/isBoolean';
 import React from 'react';
 import isEmpty from 'lodash/isEmpty';
@@ -8,7 +8,7 @@ import isEqual from 'lodash/isEqual';
 import map from 'lodash/map';
 import omit from 'lodash/omit';
 import uuid from 'uuid/v1';
-//LOCAL import
+// LOCAL import
 import { TextBlock, WrappingGrid } from '../../index';
 import { layoutConstants } from '../utils';
 import EnumRadioField from './EnumRadioField';
@@ -35,9 +35,7 @@ export default class ArrayClientLegalEntityClassificationField extends React.Com
     const prevUc = state.uc;
     const le = map(
       props.formData.signorAndInvolvedEntityDetails.clientLegalEntity,
-      value => {
-        return value.list ? value.list : value.lookup;
-      }
+      value => (value.list ? value.list : value.lookup)
     );
     const uc =
       props.formData.signorAndInvolvedEntityDetails.clientLegalEntityOther;

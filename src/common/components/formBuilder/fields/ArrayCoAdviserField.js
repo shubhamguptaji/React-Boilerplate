@@ -71,12 +71,10 @@ export default class ArrayCoAdviserField extends React.Component {
 
   riseOnValueChanged() {
     this.props.onChange(
-      this.state.data.filter(isObject).map((value, index) => {
-        return {
-          name: value[this.state.activeFields[index]],
-          domicile: value.domicile
-        };
-      })
+      this.state.data.filter(isObject).map((value, index) => ({
+        name: value[this.state.activeFields[index]],
+        domicile: value.domicile
+      }))
     );
   }
 
@@ -122,7 +120,9 @@ export default class ArrayCoAdviserField extends React.Component {
   removeEntity = (index, entity) => {
     this.setState(
       prevState => {
-        if (this.count === 1 && entity === {}) return undefined;
+        if (this.count === 1 && entity === {}) {
+          return undefined;
+        }
 
         const cloneData = prevState.data.slice();
         cloneData.splice(index, 1);

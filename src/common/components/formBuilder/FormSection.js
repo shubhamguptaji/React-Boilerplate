@@ -36,15 +36,12 @@ class FormSection extends React.Component {
     this.propertyRefs = null;
   }
 
-  isSectionUnchanged = prevState => {
-    return (
-      prevState.isVisible === this.isVisible &&
-      prevState.isEnabled === this.isEnabled
-    );
-  };
+  isSectionUnchanged = prevState =>
+    prevState.isVisible === this.isVisible &&
+    prevState.isEnabled === this.isEnabled;
 
-  invalidateState = () => {
-    return new Promise(resolve => {
+  invalidateState = () =>
+    new Promise(resolve => {
       const promises = [];
       this.setState(
         prevState => {
@@ -64,14 +61,14 @@ class FormSection extends React.Component {
         () => Promise.all(promises).then(() => resolve())
       );
     });
-  };
 
-  setPropertyValueByDependencies = propertyPath => {
-    return new Promise(resolve => {
+  setPropertyValueByDependencies = propertyPath =>
+    new Promise(resolve => {
       const property = get(propertyPath.split('.'), '[1]');
-      const propertyRef = find(this.propertyRefs, propertyRef => {
-        return property === propertyRef.props.id;
-      });
+      const propertyRef = find(
+        this.propertyRefs,
+        propertyRef => property === propertyRef.props.id
+      );
 
       if (propertyRef) {
         propertyRef.setValueByDependencies();
@@ -79,13 +76,10 @@ class FormSection extends React.Component {
 
       resolve();
     });
-  };
 
-  onChangeProxy = onChange => {
-    return (property, value) => {
-      isFunction(onChange) && onChange(property, value);
-      this.onPropertyChangeHandler(property, value);
-    };
+  onChangeProxy = onChange => (property, value) => {
+    isFunction(onChange) && onChange(property, value);
+    this.onPropertyChangeHandler(property, value);
   };
 
   onPropertyChangeHandler = (property, value) => {
@@ -100,7 +94,7 @@ class FormSection extends React.Component {
     const formProperties = Object.entries(properties).map(
       ([propertyId, propertyInfo]) => {
         const propertyKey = `${sectionId}.${propertyId}`;
-        const onChange = propertyInfo['onChange'];
+        const onChange = propertyInfo.onChange;
 
         return (
           <FormProperty
@@ -115,7 +109,9 @@ class FormSection extends React.Component {
             form={this.form}
             appearance={appearance}
             ref={x => {
-              if (x) this.propertyRefs.push(x);
+              if (x) {
+                this.propertyRefs.push(x);
+              }
             }}
             onStateChanged={onStateChanged}
           />

@@ -8,22 +8,20 @@ import Style from './ProgressButton.less';
 import { Button } from '../';
 
 export default class ProgressButton extends React.Component {
-  loadingButton = () => {
-    return <ReactLoading className={Style.loadingButton} type={'bubbles'} />;
-  };
+  loadingButton = () => (
+    <ReactLoading className={Style.loadingButton} type={'bubbles'} />
+  );
 
-  defaultButton = () => {
-    return (
-      <Button
-        tabIndex="0"
-        enabled={this.props.enabled}
-        onClick={this.props.onClick}
-        className={this.props.className}
-      >
-        {this.props.children}
-      </Button>
-    );
-  };
+  defaultButton = () => (
+    <Button
+      tabIndex="0"
+      enabled={this.props.enabled}
+      onClick={this.props.onClick}
+      className={this.props.className}
+    >
+      {this.props.children}
+    </Button>
+  );
 
   render() {
     return (

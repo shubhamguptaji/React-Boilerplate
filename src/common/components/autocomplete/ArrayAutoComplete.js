@@ -37,7 +37,9 @@ export default class ArrayAutocomplete extends React.Component {
     values = isEmpty(values) ? ArrayAutocomplete.defaultProps.value : values;
     let preparedValues = values.slice();
 
-    if (!isArray(preparedValues)) preparedValues = [];
+    if (!isArray(preparedValues)) {
+      preparedValues = [];
+    }
 
     while (preparedValues.length < this.props.minValueCount) {
       preparedValues.push(null);
@@ -88,7 +90,9 @@ export default class ArrayAutocomplete extends React.Component {
   removeEntity = (index, entity) => {
     this.setState(
       prev => {
-        if (this.count === 1 && entity == null) return undefined;
+        if (this.count === 1 && entity == null) {
+          return undefined;
+        }
 
         const cloneData = cloneDeep(prev.data);
         cloneData.splice(index, 1);

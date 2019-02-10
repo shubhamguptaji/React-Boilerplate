@@ -25,12 +25,14 @@ export default class FocusTrap extends React.Component {
     if (!this.props.disabled) {
       switch (true) {
         case e.shiftKey && e.keyCode === keyCodes.TAB:
-          if (document.activeElement === this.trapStartRef)
+          if (document.activeElement === this.trapStartRef) {
             this.trapEndRef.focus();
+          }
           break;
         case e.keyCode === keyCodes.TAB:
-          if (document.activeElement === this.trapEndRef)
+          if (document.activeElement === this.trapEndRef) {
             this.trapStartRef.focus();
+          }
           break;
         default:
           break;

@@ -64,7 +64,9 @@ export default class ArrayDropdownField extends React.Component {
   removeEntity = (index, entity) => {
     this.setState(
       prev => {
-        if (this.count === 1 && entity == null) return undefined;
+        if (this.count === 1 && entity == null) {
+          return undefined;
+        }
 
         const cloneData = cloneDeep(prev.data);
         cloneData.splice(index, 1);

@@ -1,26 +1,38 @@
 {
-    "extends": ["airbnb", "prettier", "prettier/react"],
-    "plugins": ["prettier"],
-    "rules": {
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [".js", ".jsx"]
-        }
-      ],
-      "react/prop-types": 0,
-      "no-underscore-dangle": 0,
-      "import/imports-first": ["error", "absolute-first"],
-      "import/newline-after-import": "error"
-    },
-    "globals": {
-      "window": true,
-      "document": true,
-      "localStorage": true,
-      "FormData": true,
-      "FileReader": true,
-      "Blob": true,
-      "navigator": true
-    },
-    "parser": "babel-eslint"
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "amd": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "plugins": ["react", "es2015"],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "rules": {
+    "comma-dangle": 0,
+    "react/jsx-uses-vars": 1,
+    "react/display-name": 1,
+    "no-unused-vars": "warn",
+    "no-undef": [1],
+    "no-console": 0,
+    "no-unexpected-multiline": "warn",
+    "typeof": false,
+    "react/prop-types": 0
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "16.4.2"
+    }
   }
+}

@@ -6,20 +6,19 @@ class DefaultSectionView extends React.Component {
   render() {
     const { index, title, isVisible, formProperties } = this.props;
 
-    if (!isVisible) return null;
-    else
-      return (
-        <div>
-          {index > 0 && <Line />}
-          <div className={styles.container}>
-            <TextBlock className={styles.header}>{title}</TextBlock>
-            {formProperties.map((item, index) => {
-              return item;
-            })}
-            {/* {formProperties} */}
-          </div>
+    if (!isVisible) {
+      return null;
+    }
+    return (
+      <div>
+        {index > 0 && <Line />}
+        <div className={styles.container}>
+          <TextBlock className={styles.header}>{title}</TextBlock>
+          {formProperties.map((item, index) => item)}
+          {/* {formProperties} */}
         </div>
-      );
+      </div>
+    );
   }
 }
 

@@ -59,21 +59,20 @@ export default class WrappingGrid extends React.Component {
 
     if (!parent.length) {
       return <div style={firtStyle}> {first.content} </div>;
-    } else {
-      const boxStyle = {
-        flexGrow: 1,
-        flexShrink: 1,
-        flexBasis: this.calcItemDivMinWidth(parentCopy),
-        flexWrap: 'wrap',
-        display: 'flex'
-      };
-
-      return (
-        <div style={boxStyle}>
-          <div style={firtStyle}> {first.content} </div>
-          {this.convertItem(parent)}
-        </div>
-      );
     }
+    const boxStyle = {
+      flexGrow: 1,
+      flexShrink: 1,
+      flexBasis: this.calcItemDivMinWidth(parentCopy),
+      flexWrap: 'wrap',
+      display: 'flex'
+    };
+
+    return (
+      <div style={boxStyle}>
+        <div style={firtStyle}> {first.content} </div>
+        {this.convertItem(parent)}
+      </div>
+    );
   }
 }

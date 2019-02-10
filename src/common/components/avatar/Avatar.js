@@ -6,10 +6,14 @@ const base64Mime = 'data:image/jpeg;base64,';
 
 export default class Avatar extends Component {
   ensureBase64Format(src) {
-    if (!src) return src;
+    if (!src) {
+      return src;
+    }
 
-    if (src.startsWith(base64Mime)) return src;
-    else return base64Mime + src;
+    if (src.startsWith(base64Mime)) {
+      return src;
+    }
+    return base64Mime + src;
   }
 
   render() {

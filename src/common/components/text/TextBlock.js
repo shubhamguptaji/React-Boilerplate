@@ -53,17 +53,3 @@ TextBlock.propTypes = {
 };
 
 export default TextBlock;
--------------------------------------------------------------------------------
-  -------------------------------------------------------------------------------
-.\text\TextBlock.less
--------------------------------------------------------------------------------
-.trimmed {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.nowrap {
-  white-space: nowrap;
-  overflow: hidden;
-}

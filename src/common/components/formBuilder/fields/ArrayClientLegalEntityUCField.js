@@ -69,7 +69,9 @@ export default class ArrayClientLegalEntityUCField extends React.Component {
   removeEntity = (index, entity) => {
     this.setState(
       prevState => {
-        if (this.count === 1 && entity === null) return undefined;
+        if (this.count === 1 && entity === null) {
+          return undefined;
+        }
 
         const cloneData = prevState.data.slice();
         cloneData.splice(index, 1);

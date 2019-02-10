@@ -53,12 +53,16 @@ class FormProperty extends React.Component {
   }
 
   get isValid() {
-    if (!this.validationEnabled) return true;
+    if (!this.validationEnabled) {
+      return true;
+    }
 
     if (this.isRequired) {
       const result = performPredicateAndBindContext.bind(this)(required);
       const valid = isBoolean(result) ? result : !result;
-      if (!valid) return valid;
+      if (!valid) {
+        return valid;
+      }
     }
 
     const result = performPredicateAndBindContext.bind(this)(this.props.valid);
@@ -70,12 +74,16 @@ class FormProperty extends React.Component {
   }
 
   get errorMessage() {
-    if (!this.validationEnabled) return undefined;
+    if (!this.validationEnabled) {
+      return undefined;
+    }
 
     if (this.isRequired) {
       const result = performPredicateAndBindContext.bind(this)(required);
       const errMsg = isBoolean(result) ? undefined : result.toString();
-      if (errMsg) return errMsg;
+      if (errMsg) {
+        return errMsg;
+      }
     }
 
     const result = performPredicateAndBindContext.bind(this)(this.props.valid);
@@ -125,8 +133,8 @@ class FormProperty extends React.Component {
     this.props.onChange(this.props.id, value);
   };
 
-  invalidateState = () => {
-    return new Promise(resolve => {
+  invalidateState = () =>
+    new Promise(resolve => {
       this.setState(
         prevState => {
           if (this.hasUnchanged(prevState)) {
@@ -144,10 +152,9 @@ class FormProperty extends React.Component {
         () => resolve()
       );
     });
-  };
 
-  setValueByDependencies = () => {
-    return new Promise(resolve => {
+  setValueByDependencies = () =>
+    new Promise(resolve => {
       const dependsValue = performPredicateAndBindContext.bind(this)(
         this.props.dependsValue
       );
@@ -155,18 +162,14 @@ class FormProperty extends React.Component {
       this.forceUpdate();
       resolve();
     });
-  };
 
-  hasUnchanged = prevState => {
-    return (
-      prevState.isOptional === this.isOptional &&
-      prevState.isVisible === this.isVisible &&
-      prevState.isEnabled === this.isEnabled &&
-      prevState.isValid === this.isValid &&
-      prevState.errorMsg === this.errorMessage &&
-      prevState.isReadOnly === this.isReadOnly
-    );
-  };
+  hasUnchanged = prevState =>
+    prevState.isOptional === this.isOptional &&
+    prevState.isVisible === this.isVisible &&
+    prevState.isEnabled === this.isEnabled &&
+    prevState.isValid === this.isValid &&
+    prevState.errorMsg === this.errorMessage &&
+    prevState.isReadOnly === this.isReadOnly;
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.isValid !== this.state.isValid) {

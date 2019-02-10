@@ -15,7 +15,7 @@ class Tab extends Component {
 
     let className = tabClass;
     if (currentTabIndex === index) {
-      className = tabClass + '-active';
+      className = `${tabClass}-active`;
     }
 
     return (

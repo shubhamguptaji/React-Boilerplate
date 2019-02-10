@@ -50,10 +50,10 @@ export default class OverflowTooltip extends React.Component {
 
   render() {
     const styleObj = {
-      background: '#f8fafb', //color-light-grey
+      background: '#f8fafb', // color-light-grey
       fontFamily: 'Avenir Next Medium',
       fontWeight: 'lighter',
-      color: '#7f8fa4', //color-dark-grey;
+      color: '#7f8fa4', // color-dark-grey;
       fontSize: '10pt',
       borderStyle: 'none',
       borderRadius: '4px',

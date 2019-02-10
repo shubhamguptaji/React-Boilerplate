@@ -57,11 +57,11 @@ class Text extends React.Component {
   onTextChange = ({ target: { value } }) => {
     if (!this.props.readOnly && !this.props.disabled) {
       if (this.props.showClearButton) {
-        this.setState(prevState => {
-          return Object.assign({}, prevState, {
+        this.setState(prevState =>
+          Object.assign({}, prevState, {
             showClearButton: !!value
-          });
-        });
+          })
+        );
       }
 
       this.onTextChangeThrottled(value);
@@ -69,20 +69,20 @@ class Text extends React.Component {
   };
 
   toggleTextFocus = () => {
-    this.setState(prevState => {
-      return Object.assign({}, prevState, {
+    this.setState(prevState =>
+      Object.assign({}, prevState, {
         isFocus: !prevState.isFocus
-      });
-    });
+      })
+    );
   };
 
   onClearClicked = () => {
     this.refs.searchInput.value = '';
-    this.setState(prevState => {
-      return Object.assign({}, prevState, {
+    this.setState(prevState =>
+      Object.assign({}, prevState, {
         showClearButton: false
-      });
-    });
+      })
+    );
 
     this.props.onChange();
   };

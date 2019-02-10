@@ -24,7 +24,7 @@ class RightSidebar extends Component {
     const Content = getContent(rightBar.dataType);
     let className = 'right-sidebar';
     if (rightBar.active) {
-      className = className + ' active';
+      className += ' active';
       return (
         <div className={className}>
           <IconButton

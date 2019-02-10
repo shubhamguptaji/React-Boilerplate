@@ -1,8 +1,8 @@
-//GLOBAL Imports
+// GLOBAL Imports
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-//LOCAL Imports
+// LOCAL Imports
 import { crossIcon } from '../../../assets/icons/svgPaths';
 import { IconButton } from '../index';
 import constants from '../../../common/utils/constants';
