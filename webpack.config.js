@@ -13,7 +13,11 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015'],
+          plugins: ['transform-class-properties']
+        }
       },
       {
         test: /\.less$/,
@@ -33,6 +37,10 @@ module.exports = {
             loader: 'less-loader'
           }
         ]
+      },
+      {
+        test: /\.css$/,
+        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
       }
     ]
   },

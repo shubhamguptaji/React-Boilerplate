@@ -1,0 +1,8 @@
+"horizon-ui-react": "0.0.3" package unavailable at npm
+ArrayAutocomplete - data required
+Autocomplete - data required
+navItem - horizon-ui-react package not available
+findDOMNode and this.refs depreciated error in files can be found by running npm run-script lint
+images unavailable
+./src/theme/colors.less file should be made according to design of ui.
+Some common components are rendered as component in ./src/example/common-components/example.js

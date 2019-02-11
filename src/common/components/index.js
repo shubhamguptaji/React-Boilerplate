@@ -31,7 +31,7 @@ export { default as Button } from './button/Button';
 export { default as IconButton } from './button/IconButton';
 export { default as FormBuilder } from './formBuilder/FormBuilder';
 export { default as Avatar } from './avatar/Avatar';
-export { default as NavItem } from './navItem/NavItem';
+// export { default as NavItem } from './navItem/NavItem';
 export { default as PrivateRoute } from './privateRoute/PrivateRoute';
 export { default as Icon } from './icon/Icon';
 export { default as Tooltip } from './tooltip/index';

@@ -10,13 +10,15 @@
   "author": "sgaikwad",
   "license": "ISC",
   "jest": {
-    "testRegex": "./(\\.test)(\\.js)$"
+    "testRegex": "./(\\.test)(\\.js)$",
+    "testResultsProcessor": "jest-sonar-reporter"
   },
   "scripts": {
     "test": "jest src",
     "test:ui": "jest --config=jest.config.js ui_tests --maxWorkers=1",
     "test:local": "jest --config=jest.config.local.js ui_tests",
     "test:watch": "npm test -- --watch",
+    "run-server": "json-server mock-api/db.json",
     "start": "webpack-dev-server --mode development",
     "start:http": "cross-env ENV=test webpack-dev-server --mode development",
     "start:proxy": "node proxy.js",
@@ -28,7 +30,6 @@
   },
   "dependencies": {
     "consolidate": "^0.15.1",
-    "horizon": "^2.0.0",
     "rc-datetime-picker": "^1.6.1"
   },
   "devDependencies": {
