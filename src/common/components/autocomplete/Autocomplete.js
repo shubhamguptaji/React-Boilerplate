@@ -27,8 +27,8 @@ export default class Autocomplete extends React.Component {
       source: isArray(props.source)
         ? props.source
         : props.selected
-          ? [props.selected]
-          : [],
+        ? [props.selected]
+        : [],
       showAutocompletePanel: false,
       autocompletePanelDirection: 'down',
       loading: false,

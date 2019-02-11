@@ -27,9 +27,8 @@ export default class ArrayCoAdviserField extends React.Component {
           : [{}],
       activeFields:
         isArray(props.value) && !isEmpty(props.value)
-          ? map(
-              props.value,
-              value => (this.isListValue(value.name) ? 'list' : 'lookup')
+          ? map(props.value, value =>
+              this.isListValue(value.name) ? 'list' : 'lookup'
             )
           : []
     };

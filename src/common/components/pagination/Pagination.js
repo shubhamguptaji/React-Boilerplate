@@ -83,8 +83,8 @@ export class ChevronPagination extends Component {
     const newPage = isEqual(direction, this.left)
       ? page - 1
       : isEqual(direction, this.right)
-        ? page + 1
-        : -1;
+      ? page + 1
+      : -1;
 
     return (
       <ChevronIcons disabled={disabled} onChange={onChange} page={newPage}>

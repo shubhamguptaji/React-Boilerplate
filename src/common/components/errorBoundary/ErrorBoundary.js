@@ -36,4 +36,7 @@ const mapStateToProps = function(state) {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ErrorBoundary);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ErrorBoundary);

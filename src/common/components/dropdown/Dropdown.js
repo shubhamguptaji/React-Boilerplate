@@ -242,16 +242,15 @@ export default class Dropdown extends React.Component {
                     this.props.comparator(excludeOption, option)
                   )
               )
-              .filter(
-                option =>
-                  this.props.searchable &&
-                  !isEmpty(this.state.searchableText) &&
-                  isEmpty(this.state.selected)
-                    ? includes(
-                        option.label.toLowerCase(),
-                        this.state.searchableText.toLowerCase()
-                      )
-                    : true
+              .filter(option =>
+                this.props.searchable &&
+                !isEmpty(this.state.searchableText) &&
+                isEmpty(this.state.selected)
+                  ? includes(
+                      option.label.toLowerCase(),
+                      this.state.searchableText.toLowerCase()
+                    )
+                  : true
               )
               .map((option, index) => (
                 <li

@@ -69,8 +69,8 @@ class FormProperty extends React.Component {
     return isBoolean(result)
       ? result
       : isArray(result)
-        ? map(result, value => !value)
-        : !result;
+      ? map(result, value => !value)
+      : !result;
   }
 
   get errorMessage() {
@@ -90,8 +90,8 @@ class FormProperty extends React.Component {
     return isBoolean(result)
       ? undefined
       : isArray(result)
-        ? result
-        : result.toString();
+      ? result
+      : result.toString();
   }
 
   get propertyPath() {

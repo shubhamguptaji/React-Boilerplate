@@ -6,7 +6,7 @@ import { OverflowTooltip } from '../index';
 
 const cx = classNames.bind(style);
 
-const TextBlock = (props) => {
+const TextBlock = props => {
   const {
     className,
     children,

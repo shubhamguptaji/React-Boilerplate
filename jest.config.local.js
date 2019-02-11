@@ -1,4 +1,4 @@
 module.exports = {
   verbose: true,
-  testRegex: '\\*\\|test\\|\\*'
+  testRegex: './ui_tests/.*\\.(js|jsx)$'
 };

@@ -65,4 +65,7 @@ const mapStateToProps = function(state) {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(RightSidebar);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(RightSidebar);

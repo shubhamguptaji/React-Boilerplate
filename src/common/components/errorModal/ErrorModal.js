@@ -67,4 +67,7 @@ const mapStateToProps = function(state) {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ErrorModal);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ErrorModal);

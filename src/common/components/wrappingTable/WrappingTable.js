@@ -82,7 +82,7 @@ class WrappingTable extends React.Component {
         }
         id={'rowId-' + rowCount}
         key={'rowKey-' + rowCount + Date.now()}
-        onClick={(event) => {
+        onClick={event => {
           this.setState({
             activeRow: 'rowId-' + rowCount
           });
@@ -119,7 +119,7 @@ class WrappingTable extends React.Component {
   objectToArray(obj) {
     const array = [];
 
-    Object.keys(obj).forEach((key) => {
+    Object.keys(obj).forEach(key => {
       array.push(obj[key]);
     });
 

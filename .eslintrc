@@ -3,6 +3,7 @@
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
+    "allowImportExportEverywhere": true,
     "ecmaFeatures": {
       "jsx": true,
       "modules": true,
@@ -16,7 +17,7 @@
     "es6": true,
     "jest": true
   },
-  "plugins": ["react", "es2015"],
+  "plugins": ["react"],
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "rules": {
     "comma-dangle": 0,

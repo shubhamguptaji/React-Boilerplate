@@ -1,4 +1,8 @@
 module.exports = {
   verbose: true,
-  testRegex: '\\*\\|test\\|\\*'
+  moduleNameMapper: {
+    '\\.(css|less)$': 'identity-obj-proxy'
+  },
+  setupTestFrameworkScriptFile: './src/setupTests.js'
+  // testRegex: 'ui_tests/*(\\.test)(\\.js)$'
 };

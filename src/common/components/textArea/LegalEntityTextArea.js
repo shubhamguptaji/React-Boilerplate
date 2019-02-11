@@ -101,15 +101,14 @@ class LegalEntityTextArea extends React.Component {
           onKeyDown={this.calcCharRemaining}
           onChange={this.onLegalTextAreaChange}
         />
-        {this.props.maxLength &&
-          !this.props.readonly && (
-            <div
-              className={this.styles.charCounter}
-              style={{ visibility: this.state.isFocus ? 'visible' : 'hidden' }}
-            >
-              {this.state.charRemaining} characters remaining
-            </div>
-          )}
+        {this.props.maxLength && !this.props.readonly && (
+          <div
+            className={this.styles.charCounter}
+            style={{ visibility: this.state.isFocus ? 'visible' : 'hidden' }}
+          >
+            {this.state.charRemaining} characters remaining
+          </div>
+        )}
       </div>
     );
   }
